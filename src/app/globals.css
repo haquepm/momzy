@@ -58,3 +58,5 @@ body{background:#f5faff;color:#091d3d;font-family:'Nunito Sans',Arial,sans-serif
 @media(max-width:1200px){.lb-category img{width:62px;height:62px}}
 @media(max-width:850px){.lb-category img{width:62px;height:62px}.lb-category b{font-size:10px}}
 @media(max-width:560px){.lb-category img{width:65px;height:65px}.lb-category b{font-size:10px}.lb-drawer{padding:18px}.lb-line>img{width:75px;height:75px}}
+
+.lb-checkout-form{display:flex;flex-direction:column;gap:10px;margin-top:12px}.lb-checkout-form h3{margin:4px 0;color:#12264a;font:800 18px 'Poppins'}.lb-checkout-form input,.lb-checkout-form textarea{width:100%;border:1px solid #e0e7f0;border-radius:11px;padding:12px 13px;font:14px 'Nunito Sans';color:#142849;background:#fff;outline-color:#ff7899}.lb-checkout-form textarea{min-height:75px;resize:vertical}.lb-checkout-form p{font-size:12px;line-height:1.5;color:#64748b}.lb-checkout:disabled{opacity:.6;cursor:wait}
