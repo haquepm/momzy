@@ -144,3 +144,48 @@ body{background:#f5faff;color:#091d3d;font-family:'Nunito Sans',Arial,sans-serif
 .lb-compare-offer-best{border-color:#f1a9c0;background:#fffafb}
 .lb-compare-best-label{display:inline-flex;margin-bottom:8px;padding:4px 8px;border-radius:20px;background:#ffe0e9;color:#bb3d69;font-size:9px;font-weight:900;letter-spacing:.07em}
 .lb-compare-offer>a{min-height:44px;text-align:center;line-height:1.35}
+
+
+/* Little Basket supplied category artwork: full portrait tiles with labels embedded in the illustrations */
+.lb-cats{
+  grid-template-columns:minmax(112px,1.3fr) repeat(7,minmax(0,1fr));
+  align-items:stretch;
+  gap:9px;
+}
+.lb-category{
+  align-self:stretch;
+  padding:4px;
+  border:1px solid #edf0f5;
+  border-radius:14px;
+  background:#fff;
+  overflow:hidden;
+  gap:0;
+}
+.lb-category img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:248 / 316;
+  object-fit:contain;
+  border-radius:10px;
+  background:#fff;
+}
+.lb-category b{display:none}
+.lb-category.active{
+  background:#fff1f5;
+  border:1px solid #ff91b0;
+  box-shadow:0 0 0 2px #ffd7e2;
+}
+@media(max-width:1200px){
+  .lb-cats{grid-template-columns:minmax(95px,1.1fr) repeat(7,minmax(0,1fr));gap:6px;padding:11px}
+  .lb-category{padding:3px}
+}
+@media(max-width:850px){
+  .lb-cats{grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+  .lb-category img{max-width:112px;margin:0 auto}
+}
+@media(max-width:560px){
+  .lb-cats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .lb-category{max-width:150px;width:100%;justify-self:center;padding:4px}
+  .lb-category img{max-width:none}
+}
