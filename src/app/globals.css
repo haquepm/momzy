@@ -69,7 +69,7 @@ body{background:#f5faff;color:#091d3d;font-family:'Nunito Sans',Arial,sans-serif
 
 
 /* Affiliate price presentation on the home catalogue */
-.lb-compare.lb-add,.lb-add.lb-compare{ text-decoration:none; cursor:pointer; }
+.lb-add.lb-compare-link{ text-decoration:none; cursor:pointer; }
 .lb-product-image>img{object-fit:contain;padding:8px;background:#fff}
 .lb-product-info h3{height:auto;min-height:34px;max-height:3.9em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;white-space:normal}
 .lb-price b{line-height:1.3}
