@@ -134,3 +134,13 @@ body{background:#f5faff;color:#091d3d;font-family:'Nunito Sans',Arial,sans-serif
  .lb-compare-filters label{max-width:none;flex-basis:100%}
  .lb-compare-filters select{flex:1;min-width:0}
 }
+
+
+/* Single product card with multiple marketplace price choices */
+.lb-compare-lowest{display:flex;flex-direction:column;gap:3px;margin-top:15px;padding:13px 15px;border:1px solid #f7c4d3;border-radius:12px;background:#fff4f7}
+.lb-compare-lowest span{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c84d76}
+.lb-compare-lowest strong{font:900 27px/1.2 'Poppins';color:#182c4b}
+.lb-compare-lowest small{font-size:11px;color:#778294}
+.lb-compare-offer-best{border-color:#f1a9c0;background:#fffafb}
+.lb-compare-best-label{display:inline-flex;margin-bottom:8px;padding:4px 8px;border-radius:20px;background:#ffe0e9;color:#bb3d69;font-size:9px;font-weight:900;letter-spacing:.07em}
+.lb-compare-offer>a{min-height:44px;text-align:center;line-height:1.35}
