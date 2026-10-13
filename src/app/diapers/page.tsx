@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 import {ArrowLeft,ExternalLink,LockKeyhole,Baby,CalendarDays,Weight,LogIn,LogOut} from "lucide-react";
 import {supabase} from "@/lib/supabase";
 
@@ -38,7 +39,7 @@ export default function DiapersPage(){
  const signOut=async()=>{if(supabase)await supabase.auth.signOut();setBaby(null);setDob("");setWeight("");setSelectedSizes([]);setSelectedRate(null);};
  const toggleSize=(key:string)=>setSelectedSizes(old=>old.includes(key)?old.filter(x=>x!==key):old.length<2?[...old,key]:[old[1],key]);
  return <main className="lb-diapers-page">
-  <header className="lb-diapers-header"><Link href="/" className="lb-diapers-brand">🧺 Little <em>Basket</em></Link><Link href="/" className="lb-diapers-back"><ArrowLeft size={16}/> Back to store</Link></header>
+  <header className="lb-diapers-header"><BrandLogo compact className="lb-diapers-brand"/><Link href="/" className="lb-diapers-back"><ArrowLeft size={16}/> Back to store</Link></header>
   <section className="lb-diapers-hero"><div><small>PERSONALISED DIAPER FINDER</small><h1>Find the right fit <em>for your baby</em></h1><p>Sign in, save your baby's details and discover suitable diaper sizes and today's best per-diaper prices.</p></div><strong>Right size.<br/>Better value.</strong></section>
   <section className="lb-diapers-content">
    {!sessionUser?<section className="lb-baby-panel"><div className="lb-baby-panel-heading"><LockKeyhole/><div><h2>Sign in to personalise your diaper picks</h2><p>Your baby's details are private and saved to your account for future visits.</p></div></div><label>Mobile number (India)<input value={phone} onChange={e=>setPhone(e.target.value)} placeholder="+91 9876543210" type="tel" autoComplete="tel"/></label>{otpSent&&<label>SMS verification code<input value={otp} onChange={e=>setOtp(e.target.value)} placeholder="Enter OTP" inputMode="numeric" autoComplete="one-time-code" maxLength={8}/></label>}<button className="lb-baby-primary" disabled={authBusy} onClick={otpSent?verifyOtp:sendOtp}>{authBusy?"Please wait…":otpSent?"Verify OTP":"Send OTP"}</button>{authMessage&&<p className="lb-baby-message">{authMessage}</p>}<small>Mobile OTP service must be enabled in Supabase Auth before customers can receive codes.</small></section>:<>
