@@ -387,3 +387,43 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
 @media(max-width:650px){.lb-baby-panel,.lb-baby-results,.lb-baby-price-section{padding:17px;border-radius:17px}.lb-baby-panel-heading h2,.lb-baby-results h2{font-size:18px}.lb-baby-fields{grid-template-columns:1fr;gap:0}.lb-baby-panel-heading{align-items:flex-start;flex-wrap:wrap}.lb-baby-signout{margin-left:auto}.lb-baby-size-options button{flex:1;min-width:125px}.lb-baby-price-section .lb-diapers-toolbar{align-items:stretch;flex-direction:column}.lb-baby-search{width:100%}}
 
 .lb-google-login{height:45px;border:1px solid #dce4ef;border-radius:12px;background:#fff;color:#263b5c;font:800 13px 'Nunito Sans';display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer}.lb-google-login:hover{background:#f8faff;border-color:#b8c8dc}.lb-google-login:disabled{opacity:.6;cursor:wait}.lb-auth-switch{border:0;background:transparent;color:#e34272;font:800 12px 'Nunito Sans';cursor:pointer;padding:5px}
+
+
+/* Product details and multi-image gallery */
+.lb-admin-gallery-preview{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.lb-admin-gallery-preview>div{display:flex;flex-direction:column;gap:6px;align-items:center;padding:8px;border:1px solid #e5eaf2;border-radius:12px;background:#fff}
+.lb-admin-gallery-preview img{width:92px;height:92px;object-fit:contain;border-radius:8px;background:#f7f8fb}
+.lb-admin-gallery-preview button{font-size:12px;padding:5px 9px}
+.lb-product-image>a{display:block;width:100%;height:100%}
+.lb-product-info h3 a,.lb-compare-info h3 a{color:inherit;text-decoration:none}
+.lb-product-info h3 a:hover,.lb-compare-info h3 a:hover{color:#e83f79}
+.lb-product-detail{min-height:100vh;background:#f7f8fc;color:#17223a;padding-bottom:64px}
+.lb-detail-header{height:76px;padding:0 clamp(18px,5vw,76px);display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e8edf4}
+.lb-detail-crumb{max-width:1280px;margin:24px auto;padding:0 22px;color:#76839a;font-size:13px}
+.lb-detail-crumb a{color:#e83f79;text-decoration:none}
+.lb-detail-layout{max-width:1280px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:34px;align-items:start}
+.lb-detail-gallery{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;position:sticky;top:18px}
+.lb-detail-thumbs{display:flex;flex-direction:column;gap:10px}
+.lb-detail-thumbs button{height:76px;width:76px;border:1px solid #e2e7ef;border-radius:10px;background:#fff;padding:5px;cursor:pointer}
+.lb-detail-thumbs button.active{border:2px solid #f34c85}
+.lb-detail-thumbs img{width:100%;height:100%;object-fit:contain}
+.lb-detail-main-image{position:relative;min-height:490px;height:min(62vw,620px);max-height:660px;background:#fff;border:1px solid #e5eaf2;border-radius:18px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lb-detail-main-image>img{width:100%;height:100%;object-fit:contain;padding:20px}
+.lb-detail-no-image{color:#8a95a8}
+.lb-detail-prev,.lb-detail-next{position:absolute;top:50%;transform:translateY(-50%);border:0;background:#fff;border-radius:50%;width:40px;height:40px;box-shadow:0 3px 14px #17223a20;display:grid;place-items:center;cursor:pointer}
+.lb-detail-prev{left:12px}.lb-detail-next{right:12px}
+.lb-detail-info{background:#fff;border:1px solid #e5eaf2;border-radius:18px;padding:28px}
+.lb-detail-category{color:#e83f79;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.lb-detail-info h1{font-size:clamp(25px,3vw,36px);line-height:1.2;margin:12px 0;color:#15213a}
+.lb-detail-short{color:#68758b;line-height:1.6}
+.lb-detail-price{display:flex;align-items:center;gap:14px;margin:18px 0}.lb-detail-price strong{font-size:30px;color:#e83f79}.lb-detail-price del{color:#8993a4}
+.lb-detail-description{border-top:1px solid #edf0f5;margin-top:22px;padding-top:18px}.lb-detail-description h2,.lb-detail-marketplaces h2{font-size:19px;margin:0 0 10px}.lb-detail-description p{white-space:pre-line;color:#657189;line-height:1.75}
+.lb-detail-marketplaces{margin-top:24px}.lb-detail-marketplaces>p{color:#68758b;font-size:14px}
+.lb-detail-marketplaces article{display:flex;justify-content:space-between;align-items:center;gap:14px;border:1px solid #e8edf4;border-radius:12px;padding:14px;margin-top:12px}
+.lb-detail-marketplaces article>div{display:flex;flex-direction:column;gap:5px}.lb-detail-marketplaces article strong{font-size:20px;color:#e83f79}.lb-detail-marketplaces article small{font-size:12px;color:#7c8798}
+.lb-detail-marketplaces article>a,.lb-detail-buy>button{background:#f34c85;color:white;border:0;border-radius:10px;padding:12px 16px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.lb-detail-buy{margin-top:24px}.lb-detail-buy>button{width:100%;min-height:50px}.lb-detail-buy>button:disabled{opacity:.5;cursor:not-allowed}
+.lb-detail-buy p{display:flex;align-items:center;gap:8px;color:#198754;font-size:14px}.lb-detail-buy p a{color:#e83f79}
+.lb-detail-trust{border-top:1px solid #edf0f5;margin-top:22px;padding-top:16px;color:#78849a;font-size:13px}.lb-detail-trust span{padding:0 6px}
+.lb-detail-state{max-width:900px;margin:80px auto;text-align:center;color:#657189;padding:20px}
+@media(max-width:760px){.lb-detail-layout{grid-template-columns:1fr;gap:18px}.lb-detail-gallery{position:static;grid-template-columns:58px minmax(0,1fr);gap:9px}.lb-detail-thumbs button{width:58px;height:58px}.lb-detail-main-image{min-height:320px;height:82vw;max-height:480px}.lb-detail-info{padding:20px}.lb-detail-marketplaces article{align-items:flex-start;flex-direction:column}.lb-detail-marketplaces article>a{width:100%}}
