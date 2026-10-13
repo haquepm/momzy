@@ -1,62 +1,53 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
-import {ArrowLeft,ExternalLink,Search,SlidersHorizontal} from "lucide-react";
+import {ArrowLeft,ExternalLink,LockKeyhole,Baby,CalendarDays,Weight,LogIn,LogOut} from "lucide-react";
 import {supabase} from "@/lib/supabase";
 
 type DiaperVariant={id:string;brand:string;variant_name:string;diaper_size:string|null;pack_count:number;image_url:string;amazon_url:string|null;flipkart_url:string|null;amazon_price:number|null;flipkart_price:number|null;is_active:boolean;updated_at:string};
+type BabyProfile={id:string;baby_name:string|null;date_of_birth:string|null;current_weight_kg:number|null};
 type Offer={marketplace:"Amazon"|"Flipkart";price:number;perDiaper:number;url:string|null};
 const rupees=(v:number)=>"₹"+v.toLocaleString("en-IN",{maximumFractionDigits:2});
+const SIZE_RANGES:{[key:string]:{min:number;max:number;label:string}}={
+ NB:{min:0,max:5,label:"New Born · 0–5 kg"},XS:{min:0,max:5,label:"XS · 0–5 kg"},S:{min:4,max:8,label:"S · 4–8 kg"},M:{min:7,max:12,label:"M · 7–12 kg"},L:{min:9,max:14,label:"L · 9–14 kg"},XL:{min:12,max:17,label:"XL · 12–17 kg"},XXL:{min:15,max:25,label:"XXL · 15–25 kg"},XXXL:{min:18,max:35,label:"XXXL · 18–35 kg"}
+};
+const sizeKey=(s:string|null)=>{const v=(s||"").trim().toUpperCase().replace(/NEW\s*BORN|NEWBORN/g,"NB");return v in SIZE_RANGES?v:""};
+const ageText=(dob:string|null)=>{if(!dob)return "";const birth=new Date(dob+"T12:00:00");const now=new Date();let months=(now.getFullYear()-birth.getFullYear())*12+now.getMonth()-birth.getMonth();if(now.getDate()<birth.getDate())months--;if(months<0)return "";return months<1?"Less than 1 month":months<24?months+" months":Math.floor(months/12)+" years"+(months%12?" "+months%12+" months":"");};
 export default function DiapersPage(){
- const[items,setItems]=useState<DiaperVariant[]>([]);
- const[loading,setLoading]=useState(true);
- const[error,setError]=useState("");
- const[search,setSearch]=useState("");
- const[rate,setRate]=useState<number|null>(null);
- useEffect(()=>{
-  const params=new URLSearchParams(window.location.search);
-  const requested=Number(params.get("rate"));
-  if(params.has("rate")&&Number.isFinite(requested))setRate(requested);
-  if(!supabase){setError("The catalogue is temporarily unavailable.");setLoading(false);return;}
-  let live=true;
-  (async()=>{
-   const{data,error:loadError}=await supabase.from("diaper_variants").select("id,brand,variant_name,diaper_size,pack_count,image_url,amazon_url,flipkart_url,amazon_price,flipkart_price,is_active,updated_at").eq("is_active",true).order("brand").order("variant_name");
-   if(!live)return;
-   if(loadError)setError(loadError.message);
-   else setItems((data||[]) as DiaperVariant[]);
-   setLoading(false);
-  })();
-  return()=>{live=false};
+ const[items,setItems]=useState<DiaperVariant[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState("");
+ const[sessionUser,setSessionUser]=useState<any>(null),[phone,setPhone]=useState(""),[otp,setOtp]=useState(""),[otpSent,setOtpSent]=useState(false),[authBusy,setAuthBusy]=useState(false),[authMessage,setAuthMessage]=useState("");
+ const[baby,setBaby]=useState<BabyProfile|null>(null),[dob,setDob]=useState(""),[weight,setWeight]=useState(""),[babyName,setBabyName]=useState(""),[savingBaby,setSavingBaby]=useState(false),[babyMessage,setBabyMessage]=useState("");
+ const[selectedSizes,setSelectedSizes]=useState<string[]>([]),[selectedRate,setSelectedRate]=useState<number|null>(null),[search,setSearch]=useState("");
+ useEffect(()=>{if(!supabase){setError("The catalogue is temporarily unavailable.");setLoading(false);return;}let live=true;
+ (async()=>{const [{data,error:loadError},{data:{session}}]=await Promise.all([supabase.from("diaper_variants").select("id,brand,variant_name,diaper_size,pack_count,image_url,amazon_url,flipkart_url,amazon_price,flipkart_price,is_active,updated_at").eq("is_active",true).order("brand").order("variant_name"),supabase.auth.getSession()]);if(!live)return;if(loadError)setError(loadError.message);else setItems((data||[]) as DiaperVariant[]);setSessionUser(session?.user||null);setLoading(false);})();
+ const{data}=supabase.auth.onAuthStateChange((_event,session)=>setSessionUser(session?.user||null));return()=>{live=false;data.subscription.unsubscribe();};
  },[]);
- const cards=useMemo(()=>items.map(item=>{
-  const offers:Offer[]=[
-   ...(item.amazon_price&&Number(item.amazon_price)>0?[{marketplace:"Amazon" as const,price:Number(item.amazon_price),perDiaper:Number(item.amazon_price)/item.pack_count,url:item.amazon_url}]:[]),
-   ...(item.flipkart_price&&Number(item.flipkart_price)>0?[{marketplace:"Flipkart" as const,price:Number(item.flipkart_price),perDiaper:Number(item.flipkart_price)/item.pack_count,url:item.flipkart_url}]:[])
-  ];
-  return {item,offers,best:offers.length?Math.min(...offers.map(x=>x.perDiaper)):null};
- }).filter(x=>x.offers.length>0)
- .filter(x=>!rate||x.best!==null&&Math.round(x.best)===rate)
- .filter(x=>(x.item.brand+" "+x.item.variant_name+" "+(x.item.diaper_size||"")).toLowerCase().includes(search.toLowerCase()))
- .sort((a,b)=>(a.best??Infinity)-(b.best??Infinity)),[items,rate,search]);
- const bands=useMemo(()=>[...new Set(items.flatMap(x=>[x.amazon_price,x.flipkart_price].filter((v):v is number=>v!==null&&Number(v)>0).map(v=>Math.round(Number(v)/x.pack_count))))].sort((a,b)=>a-b),[items]);
+ useEffect(()=>{if(!sessionUser||!supabase)return;let live=true;(async()=>{const{data,error}=await supabase!.from("baby_profiles").select("id,baby_name,date_of_birth,current_weight_kg").eq("user_id",sessionUser.id).order("created_at",{ascending:true}).limit(1).maybeSingle();if(!live)return;if(error){setBabyMessage("Could not load saved baby details: "+error.message);return;}if(data){setBaby(data as BabyProfile);setBabyName(data.baby_name||"");setDob(data.date_of_birth||"");setWeight(data.current_weight_kg==null?"":String(data.current_weight_kg));}})();return()=>{live=false;};},[sessionUser]);
+ const offersFor=(item:DiaperVariant):Offer[]=>[
+  ...(Number(item.amazon_price)>0?[{marketplace:"Amazon" as const,price:Number(item.amazon_price),perDiaper:Number(item.amazon_price)/item.pack_count,url:item.amazon_url}]:[]),
+  ...(Number(item.flipkart_price)>0?[{marketplace:"Flipkart" as const,price:Number(item.flipkart_price),perDiaper:Number(item.flipkart_price)/item.pack_count,url:item.flipkart_url}]:[])
+ ];
+ const recommended=useMemo(()=>{const kg=Number(weight);if(!weight||!Number.isFinite(kg)||kg<=0)return [];return Object.entries(SIZE_RANGES).filter(([,r])=>kg>=r.min&&kg<=r.max).sort((a,b)=>Math.abs((a[1].min+a[1].max)/2-kg)-Math.abs((b[1].min+b[1].max)/2-kg)).slice(0,2).map(([key])=>key);},[weight]);
+ useEffect(()=>{if(recommended.length){setSelectedSizes(recommended);setSelectedRate(null);}},[recommended.join(",")]);
+ const priced=useMemo(()=>items.map(item=>({item,offers:offersFor(item)})).filter(x=>x.offers.length>0),[items]);
+ const bands=useMemo(()=>[...new Set(priced.flatMap(x=>x.offers.map(o=>Math.round(o.perDiaper))))].sort((a,b)=>a-b),[priced]);
+ const cards=useMemo(()=>priced.filter(x=>selectedSizes.includes(sizeKey(x.item.diaper_size))).filter(x=>selectedRate===null||x.offers.some(o=>Math.round(o.perDiaper)===selectedRate)).filter(x=>(x.item.brand+" "+x.item.variant_name).toLowerCase().includes(search.toLowerCase())).sort((a,b)=>Math.min(...a.offers.map(o=>o.perDiaper))-Math.min(...b.offers.map(o=>o.perDiaper))),[priced,selectedSizes,selectedRate,search]);
+ const sendOtp=async()=>{if(!supabase)return;const p=phone.replace(/[\s()-]/g,"");if(!/^\+91[6-9]\d{9}$/.test(p)){setAuthMessage("Enter an Indian mobile number with country code, e.g. +919876543210.");return;}setAuthBusy(true);setAuthMessage("Sending OTP…");const{error}=await supabase.auth.signInWithOtp({phone:p});setAuthBusy(false);setAuthMessage(error?error.message:"OTP sent. Check your SMS.");if(!error)setOtpSent(true);};
+ const verifyOtp=async()=>{if(!supabase)return;if(!/^\d{4,8}$/.test(otp)){setAuthMessage("Enter the OTP received by SMS.");return;}setAuthBusy(true);const{error}=await supabase.auth.verifyOtp({phone:phone.replace(/[\s()-]/g,""),token:otp,type:"sms"});setAuthBusy(false);setAuthMessage(error?error.message:"Mobile number verified.");};
+ const saveBaby=async()=>{if(!supabase||!sessionUser)return;const kg=weight?Number(weight):null;if(!dob&&!kg){setBabyMessage("Enter date of birth or current weight to continue.");return;}if(dob&&dob>new Date().toISOString().slice(0,10)){setBabyMessage("Date of birth cannot be in the future.");return;}if(kg!==null&&(!Number.isFinite(kg)||kg<0.5||kg>40)){setBabyMessage("Enter a valid weight between 0.5 and 40 kg.");return;}if(!kg){setBabyMessage("Please add the baby's current weight to recommend accurate diaper sizes. Age alone cannot reliably determine diaper size.");return;}setSavingBaby(true);setBabyMessage("Saving baby details…");const payload={user_id:sessionUser.id,baby_name:babyName.trim()||null,date_of_birth:dob||null,current_weight_kg:kg,weight_updated_at:new Date().toISOString(),updated_at:new Date().toISOString()};const result=baby?await supabase.from("baby_profiles").update(payload).eq("id",baby.id).select("id,baby_name,date_of_birth,current_weight_kg").single():await supabase.from("baby_profiles").insert(payload).select("id,baby_name,date_of_birth,current_weight_kg").single();setSavingBaby(false);if(result.error){setBabyMessage(result.error.message);return;}setBaby(result.data as BabyProfile);setBabyMessage("Baby details saved. Your recommendations are ready.");};
+ const signOut=async()=>{if(supabase)await supabase.auth.signOut();setBaby(null);setDob("");setWeight("");setSelectedSizes([]);setSelectedRate(null);};
+ const toggleSize=(key:string)=>setSelectedSizes(old=>old.includes(key)?old.filter(x=>x!==key):old.length<2?[...old,key]:[old[1],key]);
  return <main className="lb-diapers-page">
   <header className="lb-diapers-header"><Link href="/" className="lb-diapers-brand">🧺 Little <em>Basket</em></Link><Link href="/" className="lb-diapers-back"><ArrowLeft size={16}/> Back to store</Link></header>
-  <section className="lb-diapers-hero"><div><small>DIAPER PRICE COMPARISON</small><h1>Find the lowest price <em>per diaper</em></h1><p>Compare pack prices from Amazon and Flipkart, normalized by the number of diapers in each pack.</p></div><strong>Pay less<br/>per diaper.</strong></section>
+  <section className="lb-diapers-hero"><div><small>PERSONALISED DIAPER FINDER</small><h1>Find the right fit <em>for your baby</em></h1><p>Sign in, save your baby's details and discover suitable diaper sizes and today's best per-diaper prices.</p></div><strong>Right size.<br/>Better value.</strong></section>
   <section className="lb-diapers-content">
-   <div className="lb-diapers-toolbar"><div><h2>Diapers by brand & variant</h2><p>Showing current prices entered by Little Basket</p></div><label><Search size={16}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search brand or size"/></label></div>
-   <div className="lb-diapers-rate-filters"><button className={rate===null?"active":""} onClick={()=>{setRate(null);history.replaceState(null,"","/diapers")}}>All price bands</button>{bands.map(b=><button key={b} className={rate===b?"active":""} onClick={()=>{setRate(b);history.replaceState(null,"","/diapers?rate="+b)}}>₹{b} / diaper</button>)}</div>
-   {loading&&<p className="lb-diapers-status">Loading diaper prices…</p>}
-   {error&&<p className="lb-diapers-status">{error}</p>}
-   {!loading&&!error&&cards.length===0&&<div className="lb-diapers-empty"><h3>No diaper prices found</h3><p>{rate!==null?"No variants currently fall in this per-diaper price band.":"Add diaper variants and enter today's Amazon or Flipkart price in the admin dashboard."}</p><button onClick={()=>{setRate(null);setSearch("");history.replaceState(null,"","/diapers")}}>Show all priced variants</button></div>}
-   <div className="lb-diapers-grid">{cards.map(({item,offers,best})=><article className="lb-diaper-card" key={item.id}>
-    <div className="lb-diaper-photo"><img src={item.image_url} alt={item.brand+" "+item.variant_name} loading="lazy"/><span>{item.pack_count} pcs / pack</span></div>
-    <div className="lb-diaper-info"><small>{item.brand}</small><h3>{item.variant_name}</h3><p>{item.diaper_size?item.diaper_size+" size · ":""}{item.pack_count} diapers in this pack</p>
-     {best!==null&&<div className="lb-diaper-unit"><small>LOWEST PRICE PER DIAPER</small><strong>{rupees(best)}</strong></div>}
-     <div className="lb-diaper-offers">{(["Amazon","Flipkart"] as const).map(market=>{const o=offers.find(x=>x.marketplace===market);if(!o)return <div className="lb-diaper-offer unavailable" key={market}><span>{market}</span><b>Price not updated</b></div>;const isBest=o.perDiaper===best;return <div className={"lb-diaper-offer"+(isBest?" best":"")} key={market}><span>{market}{isBest&&<i>LOWEST</i>}</span><b>{rupees(o.price)}</b><small>{rupees(o.perDiaper)} / diaper</small>{o.url?.trim()?<a className="lb-diaper-buy-link" href={o.url.trim()} target="_blank" rel="nofollow sponsored noopener noreferrer">Buy on {market} <ExternalLink size={13}/></a>:<span className="link-missing">Add {market} product link in Admin</span>}</div>})}</div>
-     <small className="lb-diaper-updated">Price updated: {new Date(item.updated_at).toLocaleDateString("en-IN")}</small>
-    </div>
-   </article>)}</div>
+   {!sessionUser?<section className="lb-baby-panel"><div className="lb-baby-panel-heading"><LockKeyhole/><div><h2>Sign in to personalise your diaper picks</h2><p>Your baby's details are private and saved to your account for future visits.</p></div></div><label>Mobile number (India)<input value={phone} onChange={e=>setPhone(e.target.value)} placeholder="+91 9876543210" type="tel" autoComplete="tel"/></label>{otpSent&&<label>SMS verification code<input value={otp} onChange={e=>setOtp(e.target.value)} placeholder="Enter OTP" inputMode="numeric" autoComplete="one-time-code" maxLength={8}/></label>}<button className="lb-baby-primary" disabled={authBusy} onClick={otpSent?verifyOtp:sendOtp}>{authBusy?"Please wait…":otpSent?"Verify OTP":"Send OTP"}</button>{authMessage&&<p className="lb-baby-message">{authMessage}</p>}<small>Mobile OTP service must be enabled in Supabase Auth before customers can receive codes.</small></section>:<>
+    <section className="lb-baby-panel"><div className="lb-baby-panel-heading"><Baby/><div><h2>{baby?"Your baby's details":"Tell us about your baby"}</h2><p>We'll use weight to recommend up to two suitable sizes. Date of birth helps us calculate age for future visits.</p></div><button className="lb-baby-signout" onClick={signOut}><LogOut size={15}/> Sign out</button></div><div className="lb-baby-fields"><label>Baby's name (optional)<input value={babyName} onChange={e=>setBabyName(e.target.value)} placeholder="Baby's name"/></label><label><CalendarDays size={15}/> Date of birth<input type="date" value={dob} max={new Date().toISOString().slice(0,10)} onChange={e=>setDob(e.target.value)}/></label><label><Weight size={15}/> Current weight (kg)<input type="number" min="0.5" max="40" step="0.1" value={weight} onChange={e=>setWeight(e.target.value)} placeholder="e.g. 7.5"/></label></div>{dob&&<p className="lb-baby-age">Current age: <b>{ageText(dob)}</b></p>}<button className="lb-baby-primary" disabled={savingBaby} onClick={saveBaby}>{savingBaby?"Saving…":baby?"Update baby details":"Save and find sizes"}</button>{babyMessage&&<p className="lb-baby-message">{babyMessage}</p>}</section>
+    {baby&&Number(weight)>0&&<><section className="lb-baby-results"><div><h2>Recommended sizes</h2><p>Based on the current weight of {weight} kg. Choose one or two sizes.</p></div><div className="lb-baby-size-options">{recommended.length?recommended.map(key=><button key={key} className={selectedSizes.includes(key)?"selected":""} onClick={()=>toggleSize(key)}><b>{key==="NB"?"New Born":key}</b><span>{SIZE_RANGES[key].min}–{SIZE_RANGES[key].max} kg</span><small>{selectedSizes.includes(key)?"Selected":"Choose size"}</small></button>):<p>No size range matched. Please check the weight or consult the diaper brand's sizing guidance.</p>}</div></section>
+    {selectedSizes.length>0&&<section className="lb-baby-price-section"><div className="lb-diapers-toolbar"><div><h2>Choose your price per diaper</h2><p>Showing available packs for your selected sizes.</p></div><input className="lb-baby-search" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search brand"/></div><div className="lb-diapers-rate-filters"><button className={selectedRate===null?"active":""} onClick={()=>setSelectedRate(null)}>All prices</button>{bands.map(b=><button key={b} className={selectedRate===b?"active":""} onClick={()=>setSelectedRate(selectedRate===b?null:b)}>₹{b} / diaper</button>)}</div>{cards.length===0?<p className="lb-diapers-status">No priced packs found for the selected size and price band. Try another price band or size.</p>:<div className="lb-diapers-grid">{cards.map(({item,offers})=><article className="lb-diaper-card" key={item.id}><div className="lb-diaper-photo"><img src={item.image_url} alt={item.brand+" "+item.variant_name} loading="lazy"/><span>{item.pack_count} pcs / pack</span></div><div className="lb-diaper-info"><small>{item.brand} · {item.diaper_size} size</small><h3>{item.variant_name}</h3><p>{item.pack_count} diapers per pack</p><div className="lb-diaper-offers">{offers.filter(o=>selectedRate===null||Math.round(o.perDiaper)===selectedRate).map(o=><div className="lb-diaper-offer" key={o.marketplace}><span>{o.marketplace}</span><b>{rupees(o.price)}</b><small>{rupees(o.perDiaper)} per diaper</small>{o.url?<a className="lb-diaper-buy-link" href={o.url} target="_blank" rel="nofollow sponsored noopener noreferrer">Continue to {o.marketplace} <ExternalLink size={13}/></a>:<span className="link-missing">{o.marketplace} link unavailable</span>}</div>)}</div></div></article>)}</div>}</section>}</>}
+   </>}
+   {loading&&<p className="lb-diapers-status">Loading diaper prices…</p>}{error&&<p className="lb-diapers-status">{error}</p>}
   </section>
-  <footer className="lb-diapers-footer"><Link href="/">← Little Basket home</Link><small>Prices are manually updated by Little Basket. Please confirm the final price on the retailer's website before purchase.</small></footer>
+  <footer className="lb-diapers-footer"><Link href="/">← Little Basket home</Link><small>Prices are entered by Little Basket. Confirm final price and availability with the retailer before purchase.</small></footer>
  </main>;
 }
