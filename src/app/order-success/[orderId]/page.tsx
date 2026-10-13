@@ -6,7 +6,7 @@ import {CheckCircle2,Package,Truck,Home,Clock} from "lucide-react";
 import {supabase} from "@/lib/supabase";
 type Order={id:string;order_number:string;customer_name:string;total:number;payment_status:string;order_status:string;shipping_address:any;created_at:string;order_items:{product_name:string;quantity:number;unit_price:number;line_total:number}[]};
 const money=(v:number)=>"₹"+Number(v||0).toLocaleString("en-IN");
-const stages=[{key:"placed",label:"Order placed",icon:CheckCircle2},{key:"processing",label:"Processing",icon:Clock},{key:"shipped",label:"Shipped",icon:Package},{key:"on_the_way",label:"On the way",icon:Truck},{key:"delivered",label:"Delivered",icon:Home}];
+const stages=[{key:"placed",label:"Order placed",icon:CheckCircle2},{key:"confirmed",label:"Confirmed",icon:CheckCircle2},{key:"processing",label:"Processing",icon:Clock},{key:"shipped",label:"Shipped",icon:Package},{key:"on_the_way",label:"On the way",icon:Truck},{key:"delivered",label:"Delivered",icon:Home}];
 export default function OrderSuccess(){
  const params=useParams<{orderId:string}>();const orderId=params.orderId;
  const[order,setOrder]=useState<Order|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState("");
