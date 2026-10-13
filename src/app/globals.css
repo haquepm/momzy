@@ -472,3 +472,38 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
 .lb-admin-order-details>div{padding:8px 12px;background:#f8f9fc;border-radius:10px;margin-top:8px}
 .lb-admin-order-details p{margin:6px 0}
 @media(max-width:650px){.lb-order-success{padding:18px 12px 40px}.lb-order-card{padding:20px 16px}.lb-order-timeline{gap:3px}.lb-order-timeline>div{font-size:10px}.lb-order-timeline i{width:32px;height:32px}}
+
+
+/* Consistent Little Basket identity across every page header */
+.lb-brand-logo{display:inline-flex;align-items:center;gap:10px;min-width:0;color:#102448;text-decoration:none;white-space:nowrap}
+.lb-brand-logo-mark{position:relative;width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#fff0f5,#eaf8ff);display:grid;place-items:center;color:#12335f;flex:0 0 auto}
+.lb-brand-logo-mark>svg:first-child{width:27px;height:27px;stroke-width:2.1}
+.lb-brand-logo-mark>svg:last-child{position:absolute;width:13px;height:13px;right:2px;top:1px;fill:#ff4f80;color:#ff4f80;stroke-width:2}
+.lb-brand-logo-word{display:block;font:900 23px/1 'Nunito Sans',sans-serif;letter-spacing:-1px;color:#102448}
+.lb-brand-logo-word>span{color:#f34f80;margin-left:4px}
+.lb-brand-logo-word small{display:block;margin-top:5px;font:600 9px/1.2 'Nunito Sans',sans-serif;letter-spacing:.15px;color:#78869d}
+.lb-brand-logo.compact .lb-brand-logo-mark{width:36px;height:36px;border-radius:12px}
+.lb-brand-logo.compact .lb-brand-logo-word{font-size:21px}
+.lb-brand-logo.compact .lb-brand-logo-word small{display:none}
+.lb-head .lb-brand-logo{flex:0 0 auto}
+.lb-admin-logo.lb-brand-logo{font-size:inherit}
+.lb-diapers-brand.lb-brand-logo{font-size:inherit}
+.lb-orders-brand.lb-brand-logo{font-size:inherit}
+.lb-detail-header .lb-brand-logo,.lb-compare-head .lb-brand-logo,.lb-order-success>header .lb-brand-logo{font-size:inherit}
+.lb-copy h1{font-family:'Nunito Sans',Arial,sans-serif;font-weight:900;letter-spacing:-1.9px;line-height:1.02}
+.lb-copy>p{font-family:'Nunito Sans',Arial,sans-serif;font-weight:500;letter-spacing:.05px}
+.lb-footer{background:#101f38;color:#fff;padding:42px max(5.5%,calc((100% - 1320px)/2)) 18px;text-align:left;display:block;margin-top:45px}
+.lb-footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:42px;padding-bottom:32px}
+.lb-footer-main>div{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0}
+.lb-footer-main h3{margin:0 0 7px;color:#fff;font-size:13px;font-weight:900;letter-spacing:.7px;text-transform:uppercase}
+.lb-footer-main a{color:#dce5f3;text-decoration:none;font-size:13px;line-height:1.5}
+.lb-footer-main a:hover{color:#ff91b0}
+.lb-footer-about p{max-width:330px;margin:3px 0;color:#b7c4d8;font-size:13px;line-height:1.7}
+.lb-footer-about .lb-brand-logo-word{color:#fff}
+.lb-footer-about .lb-brand-logo-word small{color:#b7c4d8}
+.lb-footer-social{display:flex;flex-direction:row!important;gap:18px!important;margin-top:5px}
+.lb-footer-social a{color:#ff91b0;font-weight:800}
+.lb-footer-main>div>small{color:#a9b7cb;font-size:12px}
+.lb-footer-bottom{border-top:1px solid #34435a;padding-top:16px;display:flex;justify-content:space-between;gap:12px;color:#aebbd0;font-size:11px}
+@media(max-width:760px){.lb-footer{padding:30px 5% 16px}.lb-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px}.lb-footer-about{grid-column:1/-1}.lb-footer-bottom{flex-direction:column}.lb-copy h1{letter-spacing:-1.2px}}
+@media(max-width:420px){.lb-footer-main{grid-template-columns:1fr 1fr;gap:22px 12px}.lb-brand-logo-word{font-size:20px}}
