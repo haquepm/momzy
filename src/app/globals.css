@@ -445,3 +445,30 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
   object-position:center;
   background:#fff;
 }
+
+
+/* Little Basket customer order confirmation and fulfilment details */
+.lb-order-success{min-height:100vh;background:#f7f8fc;padding:28px 5vw 64px;color:#17233d}
+.lb-order-success>header{max-width:1120px;margin:0 auto 28px}
+.lb-order-card{max-width:900px;margin:18px auto;background:#fff;border:1px solid #e5eaf2;border-radius:18px;padding:28px;box-shadow:0 10px 30px #1d2b4510}
+.lb-order-success-hero{text-align:center;padding:38px 24px}
+.lb-order-success-hero>svg{color:#16a36a}
+.lb-order-success-hero h1{font-size:clamp(26px,4vw,36px);margin:12px 0 8px}
+.lb-order-success-hero p{color:#657189}
+.lb-order-success-hero small{display:block;color:#77839a;margin-top:22px}
+.lb-order-number{display:block;font-size:26px;letter-spacing:.04em;color:#e83f79;margin:8px 0}
+.lb-order-payment b{color:#168451}
+.lb-order-card h2{font-size:19px;margin:20px 0 10px}
+.lb-order-card>p{color:#657189;line-height:1.6}
+.lb-order-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:22px 0 30px}
+.lb-order-timeline>div{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:#9aa4b4;font-size:12px}
+.lb-order-timeline i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#eef1f6}
+.lb-order-timeline .done{color:#168451}.lb-order-timeline .done i{background:#e6f7ef}
+.lb-order-item,.lb-order-total{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #edf0f5}
+.lb-order-total{font-size:18px;border:0;margin-top:8px}
+.lb-order-home{display:block;max-width:900px;margin:20px auto;background:#f34c85;color:white;text-align:center;padding:14px;border-radius:12px;text-decoration:none;font-weight:700}
+.lb-admin-order-details{grid-column:1/-1;margin-top:8px;font-size:13px;color:#68758b}
+.lb-admin-order-details summary{cursor:pointer;color:#e83f79;font-weight:700}
+.lb-admin-order-details>div{padding:8px 12px;background:#f8f9fc;border-radius:10px;margin-top:8px}
+.lb-admin-order-details p{margin:6px 0}
+@media(max-width:650px){.lb-order-success{padding:18px 12px 40px}.lb-order-card{padding:20px 16px}.lb-order-timeline{gap:3px}.lb-order-timeline>div{font-size:10px}.lb-order-timeline i{width:32px;height:32px}}
