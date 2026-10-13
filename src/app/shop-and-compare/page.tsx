@@ -5,6 +5,7 @@ import {Search,ExternalLink,ArrowLeft,SlidersHorizontal,Tag,ShoppingBag} from "l
 import {supabase} from "@/lib/supabase";
 type Offer={id:string;product_id:string;retailer_id:string;product_url:string;affiliate_url:string|null;price:number;mrp:number|null;availability:string;last_checked_at:string;products:{name:string;slug:string|null;description:string|null;image_url:string|null;gallery:string[]|null;category_id:string|null;status:string;categories:{name:string}|null};retailers:{name:string;slug:string;is_active:boolean}};
 const money=(n:number)=>"₹"+Number(n).toLocaleString("en-IN");
+// Product detail links use the canonical product slug when available.
 export default function ShopAndCompare(){
  const [offers,setOffers]=useState<Offer[]>([]),[categories,setCategories]=useState<{id:string;name:string}[]>([]),[search,setSearch]=useState(""),[category,setCategory]=useState("All"),[market,setMarket]=useState("All"),[loading,setLoading]=useState(true),[error,setError]=useState("");
  useEffect(()=>{const params=new URLSearchParams(window.location.search);setSearch(params.get("search")||"");},[]);
