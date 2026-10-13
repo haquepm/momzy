@@ -3,7 +3,7 @@ import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
 import {Search,ExternalLink,ArrowLeft,SlidersHorizontal,Tag,ShoppingBag} from "lucide-react";
 import {supabase} from "@/lib/supabase";
-type Offer={id:string;product_id:string;retailer_id:string;product_url:string;affiliate_url:string|null;price:number;mrp:number|null;availability:string;last_checked_at:string;products:{name:string;description:string|null;image_url:string|null;category_id:string|null;status:string;categories:{name:string}|null};retailers:{name:string;slug:string;is_active:boolean}};
+type Offer={id:string;product_id:string;retailer_id:string;product_url:string;affiliate_url:string|null;price:number;mrp:number|null;availability:string;last_checked_at:string;products:{name:string;slug:string|null;description:string|null;image_url:string|null;gallery:string[]|null;category_id:string|null;status:string;categories:{name:string}|null};retailers:{name:string;slug:string;is_active:boolean}};
 const money=(n:number)=>"₹"+Number(n).toLocaleString("en-IN");
 export default function ShopAndCompare(){
  const [offers,setOffers]=useState<Offer[]>([]),[categories,setCategories]=useState<{id:string;name:string}[]>([]),[search,setSearch]=useState(""),[category,setCategory]=useState("All"),[market,setMarket]=useState("All"),[loading,setLoading]=useState(true),[error,setError]=useState("");
