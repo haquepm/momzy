@@ -362,3 +362,26 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
   main.lb-diapers-page .lb-diaper-card{grid-template-columns:96px minmax(0,1fr)}
   main.lb-diapers-page .lb-diaper-offers{grid-template-columns:1fr}
 }
+
+/* Personalised diaper finder */
+.lb-baby-panel,.lb-baby-results,.lb-baby-price-section{background:#fff;border:1px solid #e5ebf4;border-radius:22px;padding:24px;margin:20px 0;box-shadow:0 10px 28px #263f6510}
+.lb-baby-panel-heading{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#ff4f80}
+.lb-baby-panel-heading>div{flex:1}
+.lb-baby-panel-heading h2,.lb-baby-results h2{margin:0 0 5px;color:#10284a;font-size:21px;font-weight:900}
+.lb-baby-panel-heading p,.lb-baby-results p{margin:0;color:#71809a;font-size:13px}
+.lb-baby-panel>label,.lb-baby-fields label{display:flex;flex-direction:column;gap:7px;color:#263e61;font-weight:800;font-size:13px;margin:12px 0}
+.lb-baby-panel input,.lb-baby-fields input,.lb-baby-search{height:46px;border:1px solid #dce4ef;border-radius:12px;padding:0 14px;font:inherit;color:#13294a;background:#fff;min-width:0}
+.lb-baby-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lb-baby-fields label svg{display:inline-block}
+.lb-baby-primary{border:0;border-radius:13px;background:linear-gradient(100deg,#ff6d91,#ff4778);color:white;font-weight:900;padding:13px 24px;cursor:pointer}
+.lb-baby-primary:disabled{opacity:.6;cursor:wait}
+.lb-baby-message{font-size:13px;color:#536a89;margin:10px 0}
+.lb-baby-panel>small{display:block;color:#8b96a8;margin-top:12px;font-size:11px}
+.lb-baby-signout{border:0;background:#f2f5fa;color:#516581;border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:6px;cursor:pointer}
+.lb-baby-age{font-size:14px;color:#536a89;margin:0 0 14px}
+.lb-baby-size-options{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
+.lb-baby-size-options button{min-width:150px;border:1px solid #dce5f1;border-radius:15px;background:#f9fbff;padding:13px 16px;text-align:left;display:flex;flex-direction:column;gap:4px;color:#1b3152;cursor:pointer}
+.lb-baby-size-options button.selected{border:2px solid #ff5b86;background:#fff1f5}
+.lb-baby-size-options button b{font-size:19px}.lb-baby-size-options button span{font-size:12px;color:#60738f}.lb-baby-size-options button small{font-size:11px;color:#e13f6d;font-weight:800}
+.lb-baby-price-section .lb-diapers-toolbar{align-items:center}.lb-baby-search{width:220px}
+@media(max-width:650px){.lb-baby-panel,.lb-baby-results,.lb-baby-price-section{padding:17px;border-radius:17px}.lb-baby-panel-heading h2,.lb-baby-results h2{font-size:18px}.lb-baby-fields{grid-template-columns:1fr;gap:0}.lb-baby-panel-heading{align-items:flex-start;flex-wrap:wrap}.lb-baby-signout{margin-left:auto}.lb-baby-size-options button{flex:1;min-width:125px}.lb-baby-price-section .lb-diapers-toolbar{align-items:stretch;flex-direction:column}.lb-baby-search{width:100%}}
