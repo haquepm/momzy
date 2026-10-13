@@ -427,3 +427,21 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
 .lb-detail-trust{border-top:1px solid #edf0f5;margin-top:22px;padding-top:16px;color:#78849a;font-size:13px}.lb-detail-trust span{padding:0 6px}
 .lb-detail-state{max-width:900px;margin:80px auto;text-align:center;color:#657189;padding:20px}
 @media(max-width:760px){.lb-detail-layout{grid-template-columns:1fr;gap:18px}.lb-detail-gallery{position:static;grid-template-columns:58px minmax(0,1fr);gap:9px}.lb-detail-thumbs button{width:58px;height:58px}.lb-detail-main-image{min-height:320px;height:82vw;max-height:480px}.lb-detail-info{padding:20px}.lb-detail-marketplaces article{align-items:flex-start;flex-direction:column}.lb-detail-marketplaces article>a{width:100%}}
+
+/* Ensure homepage product images fill the linked image frame.
+   The image is nested inside a Next.js Link, not a direct child of the frame. */
+.lb-product-image > a{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+}
+.lb-product-image > a > img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+}
