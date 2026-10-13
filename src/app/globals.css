@@ -189,3 +189,92 @@ body{background:#f5faff;color:#091d3d;font-family:'Nunito Sans',Arial,sans-serif
   .lb-category{max-width:150px;width:100%;justify-self:center;padding:4px}
   .lb-category img{max-width:none}
 }
+
+
+/* Diaper price tracker — admin */
+.lb-diaper-admin-intro{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:8px 0 18px;padding:18px 20px;background:#fff;border:1px solid #f0e2e8;border-radius:18px}
+.lb-diaper-admin-intro h2{margin:0 0 5px;font-size:18px;color:#17243b}
+.lb-diaper-admin-intro p{margin:0;color:#66748b;font-size:13px;line-height:1.5}
+.lb-diaper-admin-intro>button,.lb-diaper-admin-actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:10px;padding:10px 14px;background:#ff4f80;color:white;font-weight:800;cursor:pointer;white-space:nowrap}
+.lb-diaper-admin-card{margin:14px 0;padding:17px;background:#fff;border:1px solid #e8edf3;border-radius:18px;box-shadow:0 5px 18px #23395b08}
+.lb-diaper-admin-card.is-hidden{opacity:.72;background:#f9fafc}
+.lb-diaper-admin-product{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.lb-diaper-admin-product>img{width:92px;height:92px;border-radius:13px;object-fit:contain;background:#f8f9fb;border:1px solid #edf0f5}
+.lb-diaper-admin-product h3{margin:0 0 4px;font-size:17px;color:#17243b}
+.lb-diaper-admin-product p{margin:0 0 3px;color:#65738a;font-size:13px}
+.lb-diaper-admin-product small{display:block;color:#8894a5;font-size:11px}
+.lb-diaper-admin-product strong{display:inline-block;margin-top:6px;color:#c52e62;font-size:14px}
+.lb-diaper-market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lb-diaper-market-grid>section{min-width:0;padding:13px;border:1px solid #edf0f4;border-radius:13px;background:#fbfcfe}
+.lb-diaper-market-grid h4{margin:0 0 10px;font-size:14px;color:#1c3455}
+.lb-diaper-market-grid label{display:block;margin:9px 0;color:#5d6e86;font-size:12px;font-weight:700}
+.lb-diaper-market-grid input{display:block;box-sizing:border-box;width:100%;margin-top:5px;padding:10px 11px;border:1px solid #dce3ec;border-radius:9px;background:white;color:#1c2f4d;font-size:13px}
+.lb-diaper-market-grid section>small{display:block;color:#bd3f68;font-weight:800;margin-top:7px}
+.lb-diaper-admin-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}
+.lb-diaper-admin-actions>span{font-size:11px;color:#8792a4}
+.lb-diaper-admin-actions>div{display:flex;flex-wrap:wrap;gap:8px}
+.lb-diaper-admin-actions button.secondary{background:#eff3f8;color:#40536e}
+.lb-diaper-admin-actions button:disabled{opacity:.55;cursor:wait}
+/* Homepage diaper price spotlight */
+.lb-diaper-price-banner{width:89%;box-sizing:border-box;margin:12px auto 15px;padding:15px 20px;border-radius:21px;background:linear-gradient(105deg,#fff0f4 0%,#fff8f0 52%,#eef8ff 100%);border:1px solid #ffe0e9;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 8px 24px #e38da319}
+.lb-diaper-price-copy small{font-size:10px;letter-spacing:1.5px;font-weight:900;color:#cd5578}
+.lb-diaper-price-copy h2{font-size:21px;line-height:1.15;margin:4px 0;color:#162645;font-weight:900}
+.lb-diaper-price-copy p{margin:0;color:#68758a;font-size:12px}
+.lb-diaper-price-buttons{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:7px}
+.lb-diaper-price-buttons>a{display:inline-flex;align-items:center;gap:4px;padding:9px 12px;border-radius:22px;background:#fff;color:#b72b59;text-decoration:none;font-size:14px;font-weight:900;border:1px solid #ffd0dd;white-space:nowrap}
+.lb-diaper-price-buttons>a small{font-size:10px;font-weight:700}
+.lb-diaper-price-buttons>a.all{background:#ff4f80;color:#fff;border-color:#ff4f80;font-size:11px}
+/* Diaper comparison page */
+.lb-diapers-page{min-height:100vh;background:linear-gradient(180deg,#fff5f7 0,#f5f8fc 340px,#f5f8fc 100%);color:#17243b;padding-bottom:30px}
+.lb-diapers-header{width:89%;height:66px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.lb-diapers-brand{color:#192d4d;font-size:22px;font-weight:900;text-decoration:none}
+.lb-diapers-brand em{font-style:normal;color:#ff4f80}
+.lb-diapers-back{display:inline-flex;align-items:center;gap:7px;color:#4e6381;text-decoration:none;font-size:13px;font-weight:700}
+.lb-diapers-hero{width:89%;box-sizing:border-box;min-height:180px;margin:10px auto 16px;padding:27px 34px;border-radius:24px;background:linear-gradient(110deg,#ffe5ec,#fff2e8 53%,#e8f5ff);display:flex;align-items:center;justify-content:space-between;gap:18px;overflow:hidden}
+.lb-diapers-hero small{font-size:11px;letter-spacing:1.8px;font-weight:900;color:#ca5077}
+.lb-diapers-hero h1{font-size:clamp(28px,3vw,43px);line-height:1.1;margin:8px 0;color:#162744;font-weight:900}
+.lb-diapers-hero h1 em{font-style:normal;color:#f34c7c}
+.lb-diapers-hero p{max-width:650px;color:#65748a;font-size:14px;line-height:1.5;margin:0}
+.lb-diapers-hero>strong{flex:0 0 auto;font-size:27px;line-height:1.05;color:#d74775;text-align:right;transform:rotate(-5deg)}
+.lb-diapers-content{width:89%;margin:0 auto}
+.lb-diapers-toolbar{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:20px 0 12px}
+.lb-diapers-toolbar h2{margin:0;font-size:22px;font-weight:900;color:#192d4d}
+.lb-diapers-toolbar p{margin:3px 0 0;font-size:12px;color:#71809a}
+.lb-diapers-toolbar label{display:flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #e4eaf1;background:#fff;border-radius:12px;color:#71809a}
+.lb-diapers-toolbar input{width:210px;border:0;outline:0;background:transparent;color:#263c5c;font-size:13px}
+.lb-diapers-rate-filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.lb-diapers-rate-filters button{border:1px solid #f4cbd8;border-radius:22px;padding:8px 13px;background:#fff;color:#b83d66;font-size:12px;font-weight:800;cursor:pointer}
+.lb-diapers-rate-filters button.active{background:#ff4f80;color:#fff;border-color:#ff4f80}
+.lb-diapers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.lb-diaper-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e9edf3;border-radius:19px;box-shadow:0 8px 24px #31496810}
+.lb-diaper-photo{height:205px;position:relative;background:#f8f9fb;display:grid;place-items:center;padding:10px}
+.lb-diaper-photo img{width:100%;height:100%;object-fit:contain}
+.lb-diaper-photo>span{position:absolute;left:12px;bottom:12px;padding:6px 9px;border-radius:15px;background:#ffffffed;color:#334967;font-size:11px;font-weight:800}
+.lb-diaper-info{padding:14px}
+.lb-diaper-info>small:first-child{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#d24b75;font-weight:900}
+.lb-diaper-info h3{min-height:38px;margin:4px 0;font-size:16px;line-height:1.25;color:#172b4b}
+.lb-diaper-info>p{margin:0;color:#7a8799;font-size:11px}
+.lb-diaper-unit{margin:12px 0;padding:10px 12px;border-radius:12px;background:#fff2f5;display:flex;align-items:center;justify-content:space-between}
+.lb-diaper-unit small{color:#a43a5f;font-size:9px;letter-spacing:.6px;font-weight:900}
+.lb-diaper-unit strong{color:#ba285d;font-size:23px;font-weight:900}
+.lb-diaper-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lb-diaper-offer{min-width:0;padding:10px;border:1px solid #e8edf3;border-radius:12px;display:flex;flex-direction:column;gap:4px;background:#fff}
+.lb-diaper-offer.best{border-color:#ffb5cb;background:#fff8fa}
+.lb-diaper-offer>span{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:900;color:#405571}
+.lb-diaper-offer i{font-style:normal;font-size:8px;color:#ca3a69}
+.lb-diaper-offer>b{font-size:18px;color:#172b4b}
+.lb-diaper-offer>small{font-size:10px;color:#d04e78;font-weight:800}
+.lb-diaper-offer>a{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:5px;padding:8px 5px;border-radius:9px;background:#ff4f80;color:#fff;text-decoration:none;font-size:10px;font-weight:900}
+.lb-diaper-offer .link-missing{font-size:9px;color:#8792a4}
+.lb-diaper-offer.unavailable{justify-content:center;background:#fafbfd}
+.lb-diaper-offer.unavailable b{font-size:11px;color:#9aa5b4}
+.lb-diaper-updated{display:block;margin-top:12px;color:#9aa5b4;font-size:10px}
+.lb-diapers-status,.lb-diapers-empty{padding:25px;text-align:center;background:#fff;border-radius:16px;color:#65748a}
+.lb-diapers-empty h3{margin:0 0 7px;color:#263b5a}
+.lb-diapers-empty p{font-size:13px}
+.lb-diapers-empty button{padding:9px 14px;border:0;border-radius:20px;background:#ff4f80;color:#fff;font-weight:800}
+.lb-diapers-footer{width:89%;margin:32px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lb-diapers-footer a{color:#405875;text-decoration:none;font-size:12px;font-weight:800}
+.lb-diapers-footer small{color:#929cac;font-size:10px}
+@media(max-width:1050px){.lb-diaper-price-banner,.lb-diapers-header,.lb-diapers-hero,.lb-diapers-content,.lb-diapers-footer{width:94%}.lb-diaper-price-banner{align-items:flex-start;flex-direction:column}.lb-diaper-price-buttons{justify-content:flex-start}.lb-diapers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.lb-diaper-admin-intro{align-items:flex-start;flex-direction:column}.lb-diaper-market-grid{grid-template-columns:1fr}.lb-diaper-admin-product>img{width:76px;height:76px}.lb-diaper-admin-actions{align-items:flex-start;flex-direction:column}.lb-diaper-admin-actions>div{width:100%}.lb-diaper-admin-actions button{flex:1}.lb-diaper-price-banner{padding:13px;border-radius:16px;gap:10px}.lb-diaper-price-copy h2{font-size:17px}.lb-diaper-price-buttons{gap:5px}.lb-diaper-price-buttons>a{padding:7px 9px;font-size:12px}.lb-diapers-header{height:57px}.lb-diapers-brand{font-size:18px}.lb-diapers-hero{min-height:0;padding:21px;border-radius:17px}.lb-diapers-hero h1{font-size:28px}.lb-diapers-hero p{font-size:12px}.lb-diapers-hero>strong{display:none}.lb-diapers-toolbar{align-items:stretch;flex-direction:column}.lb-diapers-toolbar h2{font-size:19px}.lb-diapers-toolbar label{width:auto}.lb-diapers-toolbar input{width:100%}.lb-diapers-grid{grid-template-columns:1fr;gap:12px}.lb-diaper-card{display:grid;grid-template-columns:105px minmax(0,1fr)}.lb-diaper-photo{height:100%;min-height:250px;padding:5px}.lb-diaper-photo>span{left:5px;right:5px;bottom:6px;text-align:center;font-size:9px;padding:5px}.lb-diaper-info{padding:10px}.lb-diaper-info h3{min-height:0;font-size:14px}.lb-diaper-unit{margin:9px 0;padding:8px}.lb-diaper-unit strong{font-size:19px}.lb-diaper-offers{grid-template-columns:1fr 1fr;gap:5px}.lb-diaper-offer{padding:7px}.lb-diaper-offer>b{font-size:15px}.lb-diaper-offer>a{font-size:9px;padding:7px 3px}.lb-diapers-footer{align-items:flex-start;flex-direction:column}}
