@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 import {Search,ExternalLink,ArrowLeft,SlidersHorizontal,Tag,ShoppingBag} from "lucide-react";
 import {supabase} from "@/lib/supabase";
 type Offer={id:string;product_id:string;retailer_id:string;product_url:string;affiliate_url:string|null;price:number;mrp:number|null;availability:string;last_checked_at:string;products:{name:string;slug:string|null;description:string|null;image_url:string|null;gallery:string[]|null;category_id:string|null;status:string;categories:{name:string}|null};retailers:{name:string;slug:string;is_active:boolean}};
@@ -14,7 +15,7 @@ export default function ShopAndCompare(){
  const groups=useMemo(()=>{const m=new Map<string,Offer[]>();for(const o of filtered){const k=o.product_id;if(!m.has(k))m.set(k,[]);m.get(k)!.push(o)}return [...m.entries()].map(([id,raw])=>{const byStore=new Map<string,Offer>();for(const o of raw){const key=o.retailers?.slug||o.retailer_id;const prev=byStore.get(key);if(!prev||Number(o.price)<Number(prev.price))byStore.set(key,o)}const items=[...byStore.values()].sort((a,b)=>Number(a.price)-Number(b.price));return{id,items,lowest:items[0]?.price??0}})},[filtered]);
  const dateLabel=(v:string)=>v?new Date(v).toLocaleDateString("en-IN"):"Not recorded";
  return <main className="lb-compare">
-  <header className="lb-compare-head"><Link href="/" className="lb-compare-brand">Little <em>Basket</em></Link><Link href="/" className="lb-compare-back"><ArrowLeft size={17}/> Back to store</Link></header>
+  <header className="lb-compare-head"><BrandLogo compact className="lb-compare-brand"/><Link href="/" className="lb-compare-back"><ArrowLeft size={17}/> Back to store</Link></header>
   <section className="lb-compare-hero"><div><span>SMARTER SHOPPING FOR LITTLE ONES</span><h1>Shop & Compare</h1><p>Explore baby-care essentials and compare offers from trusted marketplaces. Purchases are completed directly on the retailer's website.</p><div className="lb-compare-filters"><label><Search size={18}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search baby products..."/></label><select value={category} onChange={e=>setCategory(e.target.value)}><option value="All">All categories</option>{categories.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select><select value={market} onChange={e=>setMarket(e.target.value)}><option value="All">All marketplaces</option><option value="amazon">Amazon</option><option value="flipkart">Flipkart</option></select></div></div></section>
   <section className="lb-compare-content"><div className="lb-compare-section-title"><div><h2>Available offers</h2><p>{groups.length} products found</p></div><span><SlidersHorizontal size={16}/> Compare marketplace prices</span></div>
    {loading?<p className="lb-compare-state">Loading offers…</p>:error?<p className="lb-compare-state error">Unable to load offers: {error}</p>:groups.length===0?<div className="lb-compare-empty"><Tag size={30}/><h3>No affiliate offers found</h3><p>Try another search or check back soon for new products.</p></div>:
