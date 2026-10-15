@@ -824,3 +824,12 @@ body{background:#fff;color:#17243b}
 .lb-brand-logo-mark{overflow:hidden;background:transparent;border-radius:0}
 .lb-brand-logo-mark img{display:block;width:100%;height:100%;object-fit:contain}
 .lb-brand-logo.compact .lb-brand-logo-mark{width:40px;height:40px}
+
+
+/* Category thumbnails: consistent, larger image tiles with no letterboxing. */
+.lb-reference-categories>button>span{width:72px;height:72px;flex:0 0 72px;overflow:hidden;border-radius:10px;}
+.lb-reference-categories img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;padding:0;border-radius:10px;}
+@media(max-width:650px){
+ .lb-reference-categories>button>span{width:68px;height:68px;flex-basis:68px;}
+ .lb-reference-categories img{width:100%;height:100%;object-fit:cover;}
+}
