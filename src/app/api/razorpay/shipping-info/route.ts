@@ -20,6 +20,7 @@ export async function POST(request: Request) {
     const responseAddresses = addresses.map((address) => {
       const zipcode = String(address?.zipcode ?? "").trim();
       const country = String(address?.country ?? "IN").trim().toUpperCase();
+      const validIndianPincode = country === "IN" && /^[1-9]\d{5}$/.test(zipcode);
 
       return {
         id: String(address?.id ?? ""),
@@ -30,8 +31,8 @@ export async function POST(request: Request) {
           {
             id: "little-basket-free-delivery",
             name: "Free Delivery",
-            description: "Free delivery on all orders",
-            serviceable: country === "IN" && /^\\d{6}$/.test(zipcode),
+            description: "Free delivery on orders within India",
+            serviceable: validIndianPincode,
             shipping_fee: 0,
             cod: false,
             cod_fee: 0,
@@ -40,9 +41,10 @@ export async function POST(request: Request) {
       };
     });
 
-    return Response.json({ addresses: responseAddresses }, {
-      headers: { "Cache-Control": "no-store" },
-    });
+    return Response.json(
+      { addresses: responseAddresses },
+      { headers: { "Cache-Control": "no-store" } },
+    );
   } catch {
     return Response.json({ error: "Invalid shipping information request." }, { status: 400 });
   }
