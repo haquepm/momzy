@@ -72,9 +72,21 @@ return <main className="lb">
  <nav className="lb-reference-nav"><a className="lb-all-categories" href="#lb-categories">☰ <span>All Categories</span></a>{["Diapers","Feeding","Bath & Skincare","Health & Safety","Toys & Learning","Mom Care","By Age"].map((x,i)=><a key={x} href={i===0?"/diapers":"#lb-categories"} onClick={()=>{const v=["Diapers & Wipes","Feeding Essentials","Baby Bath & Skincare","Health & Safety","Toys & Learning","Mom Care","All"][i];setSelected(v);setSearch("");}}>{x}</a>)}<a className="lb-todays-deals" href="#shop">🔥 <span>Today's Deals</span></a></nav>
 </header>
 <section className="lb-reference-hero lb-reference-hero-artwork" aria-label="Little Basket baby care banner">
- <a className="lb-hero-image-link" href="/diapers" aria-label="Shop baby products">
-  <img className="lb-reference-hero-image" src="/category-images/hero/hero-banner-wide.png" alt="Everything Your Baby Needs — Little Basket baby care banner"/>
- </a>
+ <div className="lb-hero-image-link" aria-hidden="true">
+  <img className="lb-reference-hero-image" src="/category-images/hero/hero-banner-wide.png" alt=""/>
+ </div>
+ <div className="lb-reference-hero-copy lb-hero-copy-visible">
+  <small>PREMIUM CARE FOR YOUR LITTLE ONE</small>
+  <h1>Everything Your<br/><em>Baby Needs</em></h1>
+  <p>Top brands. Best prices. Happier little moments.</p>
+  <div className="lb-reference-perks">
+   <span><b>Best Price</b><small>Comparison</small></span>
+   <span><b>100% Genuine</b><small>Products</small></span>
+   <span><b>Fast &amp; Reliable</b><small>Delivery</small></span>
+  </div>
+  <a href="/diapers">Shop Now <ArrowRight size={17}/></a>
+ </div>
+ <div className="lb-hero-dots" aria-hidden="true"><i></i><i></i><i></i></div>
 </section>
 <section className="lb-reference-categories" id="lb-categories">{[{n:"Diapers",img:"/category-images/categories/diapers.webp",v:"Diapers & Wipes"},{n:"Feeding",img:"/category-images/categories/feeding.webp",v:"Feeding Essentials"},{n:"Bath & Skincare",img:"/category-images/categories/bath-skincare.webp",v:"Baby Bath & Skincare"},{n:"Health & Safety",img:"",v:"Health & Safety"},{n:"Toys & Learning",img:"/category-images/categories/toys-learning.webp",v:"Toys & Learning"},{n:"Mom Care",img:"/category-images/categories/health-safety.webp",v:"Mom Care"},{n:"Clothing",img:"/category-images/categories/clothing.webp",v:"Clothing & Accessories"},{n:"Nursery",img:"/category-images/categories/nursery.webp",v:"Gear & Travel"},{n:"All Categories",img:"",v:"All"}].map((c,i)=><button key={c.n} onClick={()=>{if(i===0){window.location.assign("/diapers");return;}setSelected(c.v);setSearch("");document.getElementById("shop")?.scrollIntoView({behavior:"smooth"});}}><span>{c.img?<img src={c.img} alt=""/>:<b className="lb-category-emoji">{["","","","🌡️","","","","🛏️","▦"][i]}</b>}</span><strong>{c.n}</strong></button>)}</section>
 <section className="lb-reference-diaper-banner"><div className="lb-reference-diaper-copy"><h2>Diapers at<br/>Lowest Prices</h2><p>Compare • Save • Shop Smarter</p><a href="/diapers">View Diaper Deals <ArrowRight size={15}/></a></div><div className="lb-diaper-brand-stack"><b>Pampers</b><b>Huggies</b><b>MamyPoko</b><b>babyhug</b></div><div className="lb-diaper-discount"><small>UP TO</small><strong>40%</strong><small>OFF</small></div><div className="lb-reference-diaper-points"><span>♧ <b>Live Price Comparison</b><small>Amazon | Flipkart | Meesho</small></span><span>◉ <b>Best Offers Updated Daily</b></span><span>♧ <b>Choose Right Size for</b><small>Your Baby</small></span></div></section>
