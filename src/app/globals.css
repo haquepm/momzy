@@ -881,3 +881,48 @@ body{background:#fff;color:#17243b}
  .lb-hero-dots i{width:7px;height:7px;}
 }
 @media(prefers-reduced-motion:reduce){.lb-reference-hero-artwork .lb-hero-copy-visible{animation:none;}}
+
+
+/* Refined, compact Little Basket hero layout */
+.lb-reference-hero.lb-reference-hero-artwork{aspect-ratio:4.15/1;height:auto;min-height:390px;max-height:500px;}
+.lb-reference-hero-artwork .lb-reference-hero-image{object-fit:cover;object-position:68% 39%;}
+.lb-reference-hero-artwork .lb-hero-copy-visible{left:max(5.5%,calc((100% - 1400px)/2));top:50%;width:min(510px,39%);max-width:510px;}
+.lb-hero-copy-visible>small{font-size:11px;letter-spacing:1.65px;margin-bottom:10px;}
+.lb-hero-copy-visible h1{font-size:clamp(40px,3.15vw,54px);line-height:.94;letter-spacing:-1.35px;margin:0 0 12px;}
+.lb-hero-copy-visible>p{font-size:15px;line-height:1.45;margin:0 0 17px;}
+.lb-hero-copy-visible .lb-hero-perks{display:flex;align-items:center;gap:18px;margin:0 0 20px;max-width:500px;}
+.lb-hero-perk{display:flex;align-items:center;gap:8px;min-width:0;flex:1;}
+.lb-hero-perk-icon{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;background:#ffe0e4;color:#e85f73;}
+.lb-hero-perk:nth-child(2) .lb-hero-perk-icon{background:#ffe8ce;color:#d98236;}
+.lb-hero-perk:nth-child(3) .lb-hero-perk-icon{background:#ffe0e5;color:#e85f73;}
+.lb-hero-perk-copy{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.lb-hero-perk-copy b{font-family:'Nunito Sans',sans-serif;font-size:10px;line-height:1.25;font-weight:900;color:#30313b;white-space:nowrap;}
+.lb-hero-perk-copy small{font-family:'Nunito Sans',sans-serif;font-size:10px;line-height:1.25;color:#5e6069;white-space:nowrap;}
+.lb-hero-copy-visible>a{min-width:160px;padding:12px 25px;font-size:14px;}
+.lb-hero-dots{bottom:12px;}
+@media(min-width:1400px){
+ .lb-reference-hero.lb-reference-hero-artwork{min-height:400px;}
+}
+@media(max-width:1000px){
+ .lb-reference-hero.lb-reference-hero-artwork{aspect-ratio:3.3/1;min-height:350px;}
+ .lb-reference-hero-artwork .lb-hero-copy-visible{width:47%;left:4.5%;}
+ .lb-hero-copy-visible h1{font-size:clamp(36px,4.6vw,48px);}
+ .lb-hero-copy-visible .lb-hero-perks{gap:9px;}
+ .lb-hero-perk{gap:5px;}
+ .lb-hero-perk-icon{width:30px;height:30px;flex-basis:30px;}
+ .lb-hero-perk-copy b,.lb-hero-perk-copy small{font-size:9px;}
+}
+@media(max-width:700px){
+ .lb-reference-hero.lb-reference-hero-artwork{aspect-ratio:1.3/1;min-height:360px;max-height:480px;}
+ .lb-reference-hero-artwork .lb-reference-hero-image{object-position:66% center;}
+ .lb-reference-hero-artwork .lb-hero-copy-visible{left:5%;top:7%;width:61%;max-width:340px;transform:none;}
+ .lb-hero-copy-visible>small{font-size:8px;letter-spacing:1px;margin-bottom:7px;}
+ .lb-hero-copy-visible h1{font-size:clamp(29px,7.5vw,39px);line-height:.95;margin-bottom:8px;}
+ .lb-hero-copy-visible>p{font-size:10px;line-height:1.35;margin-bottom:11px;max-width:220px;}
+ .lb-hero-copy-visible .lb-hero-perks{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:12px;}
+ .lb-hero-perk{gap:6px;}
+ .lb-hero-perk-icon{width:25px;height:25px;flex-basis:25px;}
+ .lb-hero-perk-icon svg{width:14px;height:14px;}
+ .lb-hero-perk-copy b,.lb-hero-perk-copy small{font-size:8px;}
+ .lb-hero-copy-visible>a{min-width:125px;padding:9px 15px;font-size:11px;}
+}
