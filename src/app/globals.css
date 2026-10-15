@@ -833,3 +833,11 @@ body{background:#fff;color:#17243b}
  .lb-reference-categories>button>span{width:68px;height:68px;flex-basis:68px;}
  .lb-reference-categories img{width:100%;height:100%;object-fit:cover;}
 }
+
+
+/* Full-width supplied Little Basket hero artwork */
+.lb-reference-hero.lb-reference-hero-artwork{display:block;width:100%;height:auto;aspect-ratio:2103/732;min-height:0;position:relative;overflow:hidden;background:#fff7f0;}
+.lb-reference-hero-artwork:after{display:none;}
+.lb-hero-image-link{display:block;width:100%;height:100%;position:absolute;inset:0;}
+.lb-reference-hero-artwork .lb-reference-hero-image{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;}
+@media(max-width:700px){.lb-reference-hero.lb-reference-hero-artwork{aspect-ratio: 1.65/1;}.lb-reference-hero-artwork .lb-reference-hero-image{object-position:58% center;}}
