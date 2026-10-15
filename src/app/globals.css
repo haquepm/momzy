@@ -507,3 +507,54 @@ main.lb-diapers-page .lb-diaper-offer .link-missing{
 .lb-footer-bottom{border-top:1px solid #34435a;padding-top:16px;display:flex;justify-content:space-between;gap:12px;color:#aebbd0;font-size:11px}
 @media(max-width:760px){.lb-footer{padding:30px 5% 16px}.lb-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px}.lb-footer-about{grid-column:1/-1}.lb-footer-bottom{flex-direction:column}.lb-copy h1{letter-spacing:-1.2px}}
 @media(max-width:420px){.lb-footer-main{grid-template-columns:1fr 1fr;gap:22px 12px}.lb-brand-logo-word{font-size:20px}}
+
+
+/* Editorial storefront refresh — Little Basket */
+body{background:#fff;color:#17243b}
+.lb{background:#fff!important;overflow:clip}
+.lb-head{width:min(1320px,92%);height:76px;margin:14px auto 22px;border-radius:0;border:1px solid #edf0f2;box-shadow:0 5px 22px #182b3a0a;background:#fff;gap:22px}
+.lb-head nav{gap:3px}.lb-head nav a{font-size:12px;padding:11px 10px;color:#26364a}.lb-head nav a.on{background:#fff0f4;color:#e43f75}
+.lb-search{background:#f6f7f8;border-radius:7px;max-width:260px}.lb-actions button{border:1px solid #edf0f2;border-radius:8px;background:#fff}
+.lb-diaper-price-banner{width:min(1320px,92%);margin:0 auto 18px;border-radius:8px}
+.lb-hero{width:min(1320px,92%);height:470px;border-radius:4px;grid-template-columns:1.02fr .98fr;background:#f4eee8;box-shadow:none}
+.lb-copy{padding:52px 0 25px 7%;background:linear-gradient(105deg,#f6f2e9 0%,#f6f2e9f2 70%,#f6f2e900 100%);clip-path:none}
+.lb-copy>small{color:#d14a76;letter-spacing:2.2px}.lb-copy h1{font-size:clamp(48px,5vw,70px);line-height:.99;max-width:620px}
+.lb-copy>p{font-size:16px;max-width:440px;line-height:1.6}
+.lb-cta{border-radius:4px;padding:14px 28px;font-size:14px;box-shadow:none}
+.lb-benefits{gap:18px}.lb-benefits i{border-radius:10px}
+.lb-baby>img{object-position:center 42%}.lb-cloud{border-radius:8px;transform:none}
+.lb-discovery{width:min(1320px,92%);grid-template-columns:1fr 270px;gap:14px;margin:18px auto}
+.lb-cats{border:1px solid #edf0f2;border-radius:4px;grid-template-columns:1.2fr repeat(7,minmax(0,1fr));background:#fff}
+.lb-cats .lb-category{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;color:#25364b}
+.lb-cats .lb-category img{width:68px;height:68px;border-radius:50%;object-fit:cover}
+.lb-cats .lb-category b{font-size:11px;text-align:center}.lb-cats .lb-category.active{color:#e43f75}
+.lb-offer{border-radius:4px;background:#f6f0e9;border:0}.lb-offer a{border-radius:3px;background:#17243b;color:#fff}
+.lb-best{width:min(1320px,92%);margin:34px auto 48px}
+.lb-title{margin:0 0 18px}.lb-title h2{font-size:27px;letter-spacing:-.7px}.lb-title p{font-size:13px;color:#758093}
+.lb-products{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.lb-products article{border:1px solid #edf0f2;border-radius:4px;box-shadow:none;background:#fff}
+.lb-product-image{height:190px;background:#f6f6f4}.lb-product-image>a>img{object-fit:contain;padding:12px}
+.lb-heart{border:1px solid #edf0f2}.lb-product-info{padding:12px}
+.lb-product-info h3{font-size:13px;height:34px}.lb-rating{font-size:13px}.lb-add{border-radius:3px;background:#17243b;height:38px}
+.lb-editorial{width:min(1320px,92%);margin:42px auto 62px;display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:14px;min-height:310px}
+.lb-editorial-intro{padding:26px 28px 24px 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.lb-editorial-intro>span,.lb-why-heading>span,.lb-quote>div>span{font-size:10px;font-weight:900;letter-spacing:2px;color:#e34b7c}
+.lb-editorial-intro h2{font:900 clamp(27px,3vw,38px)/1.08 'Poppins';letter-spacing:-1px;margin:12px 0;color:#18263b}
+.lb-editorial-intro h2 em{font-style:normal;color:#e84c7d}.lb-editorial-intro p{font-size:14px;line-height:1.7;color:#738095;max-width:350px}
+.lb-editorial-intro>a,.lb-quote a{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:12px 18px;background:#17243b;color:#fff;text-decoration:none;font-size:12px;font-weight:800}
+.lb-editorial-card{position:relative;min-height:310px;overflow:hidden;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:25px;background:#dfe5e3}
+.lb-editorial-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101b2bd9,transparent 78%)}
+.lb-editorial-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.lb-editorial-card:hover img{transform:scale(1.04)}
+.lb-editorial-card>*:not(img){position:relative;z-index:1}.lb-editorial-card span{font-size:9px;font-weight:900;letter-spacing:1.7px}.lb-editorial-card b{font:800 25px/1.08 'Poppins';margin:9px 0}.lb-editorial-card i{font-size:11px;font-style:normal}
+.lb-why{width:min(1320px,92%);margin:0 auto 54px;padding:35px 0;border-top:1px solid #edf0f2;border-bottom:1px solid #edf0f2}
+.lb-why-heading{text-align:center}.lb-why-heading h2{font:800 27px 'Poppins';margin:8px 0;color:#18263b}.lb-why-heading p{font-size:13px;color:#7b8797}
+.lb-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.lb-why-grid article{text-align:center;padding:15px 25px}.lb-why-grid article>i{width:48px;height:48px;display:grid;place-items:center;margin:0 auto 10px;border-radius:50%;background:#fff0f4;color:#e34b7c;font-size:26px;font-style:normal}
+.lb-why-grid h3{font:800 15px 'Poppins';margin:8px 0}.lb-why-grid p{font-size:12px;line-height:1.65;color:#7b8797;max-width:260px;margin:0 auto}
+.lb-quote{width:min(1320px,92%);height:310px;margin:0 auto 55px;display:grid;grid-template-columns:1.05fr .95fr;background:#f3eee9}
+.lb-quote>img{width:100%;height:310px;object-fit:cover}.lb-quote>div{padding:34px 8%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.lb-quote h2{font:800 clamp(25px,3vw,36px)/1.1 'Poppins';margin:12px 0;color:#18263b}.lb-quote p{font-size:13px;line-height:1.7;color:#657287;max-width:380px}
+.lb-footer{margin-top:0}
+@media(max-width:1050px){.lb-head{width:94%;gap:10px}.lb-head nav a{padding:9px 6px}.lb-discovery{grid-template-columns:1fr}.lb-cats{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.lb-catintro{grid-column:1/-1}.lb-editorial{grid-template-columns:1fr 1fr}.lb-editorial-intro{grid-column:1/-1;padding:10px 0}.lb-products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.lb-head{width:94%;height:auto;min-height:62px;margin:8px auto 12px;padding:10px;border-radius:8px}.lb-head nav{order:5;width:100%;overflow:auto}.lb-search{order:4;flex-basis:100%;max-width:none}.lb-hero{width:94%;height:auto;grid-template-columns:1fr}.lb-copy{padding:28px 7% 12px}.lb-copy h1{font-size:42px}.lb-copy>p{font-size:13px}.lb-benefits{position:relative;left:auto;bottom:auto;margin:20px 0 4px;flex-wrap:wrap}.lb-baby{height:230px}.lb-discovery,.lb-best,.lb-editorial,.lb-why,.lb-quote{width:94%}.lb-cats{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 6px}.lb-cats .lb-category img{width:62px;height:62px}.lb-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.lb-product-image{height:150px}.lb-editorial{grid-template-columns:1fr;gap:10px}.lb-editorial-intro{grid-column:auto}.lb-editorial-card{min-height:240px}.lb-why-grid{grid-template-columns:1fr;gap:8px}.lb-quote{height:auto;grid-template-columns:1fr}.lb-quote>img{height:210px}.lb-quote>div{padding:25px}.lb-title h2{font-size:22px}}
