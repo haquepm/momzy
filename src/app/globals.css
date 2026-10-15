@@ -841,3 +841,42 @@ body{background:#fff;color:#17243b}
 .lb-hero-image-link{display:block;width:100%;height:100%;position:absolute;inset:0;}
 .lb-reference-hero-artwork .lb-reference-hero-image{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;}
 @media(max-width:700px){.lb-reference-hero.lb-reference-hero-artwork{aspect-ratio: 1.65/1;}.lb-reference-hero-artwork .lb-reference-hero-image{object-position:58% center;}}
+
+
+/* Reference-matched hero copy layered over the existing baby banner. */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+.lb-reference-hero-artwork .lb-reference-hero-image{z-index:0;object-position:center center;}
+.lb-reference-hero-artwork .lb-hero-copy-visible{position:absolute;z-index:2;left:max(3.8%,calc((100% - 1400px)/2));top:50%;transform:translateY(-50%);width:min(43%,620px);margin:0;padding:0;animation:lbHeroReveal .7s ease-out both;}
+.lb-hero-copy-visible>small{display:block;font-family:'Nunito Sans',sans-serif;font-size:clamp(9px,.75vw,12px);letter-spacing:2px;font-weight:900;color:#98484e;margin:0 0 9px;}
+.lb-hero-copy-visible h1{font-family:'Fredoka','Nunito Sans',sans-serif;font-size:clamp(34px,3.7vw,62px);font-weight:700;line-height:.91;letter-spacing:-1.5px;color:#363541;margin:0 0 9px;}
+.lb-hero-copy-visible h1 em{font-style:normal;color:#f26376;}
+.lb-hero-copy-visible>p{font-family:'Nunito Sans',sans-serif;font-size:clamp(11px,1vw,16px);font-weight:600;color:#4b4a52;margin:0 0 16px;}
+.lb-hero-copy-visible .lb-reference-perks{display:flex;align-items:center;gap:clamp(10px,1.6vw,25px);margin:0 0 17px;}
+.lb-hero-copy-visible .lb-reference-perks span{position:relative;display:grid;grid-template-columns:34px auto;grid-template-rows:auto auto;align-items:center;column-gap:7px;min-width:0;color:#e96579;font-family:'Nunito Sans',sans-serif;font-size:10px;}
+.lb-hero-copy-visible .lb-reference-perks span:before{content:"✿";grid-row:1/3;grid-column:1;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ffe0e4;color:#e96579;font-size:17px;}
+.lb-hero-copy-visible .lb-reference-perks span:nth-child(2):before{content:"♢";background:#ffe5c9;color:#e88a37;}
+.lb-hero-copy-visible .lb-reference-perks span:nth-child(3):before{content:"↗";background:#ffdce1;color:#e96579;}
+.lb-hero-copy-visible .lb-reference-perks span b{font-size:clamp(8px,.68vw,10px);font-weight:900;white-space:nowrap;color:#30313b;align-self:end;}
+.lb-hero-copy-visible .lb-reference-perks span small{grid-column:2;font-size:clamp(8px,.65vw,10px);line-height:1.2;color:#555762;white-space:nowrap;}
+.lb-hero-copy-visible>a{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-width:172px;background:#ed6875;color:#fff;text-decoration:none;border-radius:28px;padding:12px 25px;font-family:'Nunito Sans',sans-serif;font-size:14px;font-weight:900;box-shadow:0 5px 14px #e9677525;transition:transform .2s ease,background .2s ease;}
+.lb-hero-copy-visible>a:hover{transform:translateY(-2px);background:#df5667;}
+.lb-hero-dots{position:absolute;z-index:3;bottom:12px;left:50%;display:flex;gap:9px;transform:translateX(-50%);letter-spacing:0;font-size:0;}
+.lb-hero-dots i{display:block;width:9px;height:9px;border-radius:50%;background:#fff9;box-shadow:0 1px 3px #3332;}
+.lb-hero-dots i:first-child{background:#e65e70;}
+@keyframes lbHeroReveal{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+@media(max-width:700px){
+ .lb-reference-hero.lb-reference-hero-artwork{aspect-ratio:1.65/1;}
+ .lb-reference-hero-artwork .lb-reference-hero-image{object-position:62% center;}
+ .lb-reference-hero-artwork .lb-hero-copy-visible{left:5%;top:8%;transform:none;width:58%;padding:0;}
+ .lb-hero-copy-visible>small{font-size:8px;letter-spacing:1.1px;margin-bottom:7px;}
+ .lb-hero-copy-visible h1{font-size:clamp(27px,7vw,42px);letter-spacing:-.8px;line-height:.94;}
+ .lb-hero-copy-visible>p{font-size:10px;line-height:1.3;margin-bottom:10px;max-width:220px;}
+ .lb-hero-copy-visible .lb-reference-perks{gap:7px;flex-wrap:wrap;margin-bottom:10px;}
+ .lb-hero-copy-visible .lb-reference-perks span{grid-template-columns:25px auto;column-gap:4px;}
+ .lb-hero-copy-visible .lb-reference-perks span:before{width:25px;height:25px;font-size:13px;}
+ .lb-hero-copy-visible .lb-reference-perks span b,.lb-hero-copy-visible .lb-reference-perks span small{font-size:7px;}
+ .lb-hero-copy-visible>a{min-width:125px;padding:9px 16px;font-size:11px;}
+ .lb-hero-dots{bottom:8px;}
+ .lb-hero-dots i{width:7px;height:7px;}
+}
+@media(prefers-reduced-motion:reduce){.lb-reference-hero-artwork .lb-hero-copy-visible{animation:none;}}
