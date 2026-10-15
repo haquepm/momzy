@@ -31,10 +31,10 @@ export async function POST(request: Request) {
           {
             id: "little-basket-free-delivery",
             name: "Free Delivery",
-            description: "Free delivery on orders within India",
+            description: "Free delivery on orders within India. Cash on Delivery is available.",
             serviceable: validIndianPincode,
             shipping_fee: 0,
-            cod: false,
+            cod: true,
             cod_fee: 0,
           },
         ],
@@ -54,7 +54,8 @@ export async function GET() {
   return Response.json({
     service: "Little Basket Razorpay shipping information",
     shipping_fee: 0,
-    cod: false,
-    message: "POST a Razorpay Magic Checkout shipping information request.",
+    cod: true,
+    cod_fee: 0,
+    message: "Free delivery and Cash on Delivery are enabled for valid Indian PIN codes.",
   });
 }
