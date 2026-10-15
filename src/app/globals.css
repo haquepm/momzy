@@ -658,3 +658,164 @@ body{background:#fff;color:#17243b}
 
 /* Keep the page composition close to the supplied reference: one feature story and one editorial strip. */
 .lb-editorial,.lb-quote{display:none!important}
+
+
+/* Little Basket — close match to the supplied storefront reference */
+.lb{background:#fff!important;color:#202b3d!important;font-family:'Nunito Sans',Arial,sans-serif}
+.lb-reference-head{width:100%;height:auto;min-height:96px;margin:0 auto 0;padding:8px max(4.2%,calc((100% - 1400px)/2));border:0;border-radius:0;box-shadow:0 1px 8px #182b3a0b;display:flex;flex-direction:column;gap:7px;background:#fff;position:relative;z-index:4}
+.lb-header-top{width:100%;display:grid;grid-template-columns:220px minmax(250px,1fr) auto;align-items:center;gap:30px;min-height:42px}
+.lb-reference-head .lb-brand-logo{justify-self:start}
+.lb-reference-head .lb-search{width:min(100%,520px);max-width:none;height:40px;margin:0 auto;border:1px solid #f0ece9;background:#f8f6f4;border-radius:24px;padding:0 14px;display:flex;align-items:center;gap:10px}
+.lb-reference-head .lb-search input{font-size:12px}
+.lb-reference-head .lb-actions{display:flex;align-items:center;gap:20px}
+.lb-reference-head .lb-actions button{border:0;background:transparent;border-radius:0;padding:4px;position:relative;display:flex;align-items:center;gap:7px;color:#202536}
+.lb-reference-head .lb-actions button svg{width:20px;height:20px;stroke-width:1.7}
+.lb-reference-head .lb-actions button span{font-size:12px;font-weight:700;white-space:nowrap}
+.lb-reference-head .lb-actions i{position:absolute;right:-5px;top:-5px;width:15px;height:15px;border-radius:50%;background:#ed6872;color:#fff;font-size:9px;font-style:normal;display:grid;place-items:center}
+.lb-reference-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;height:38px;overflow:visible}
+.lb-reference-nav>a{color:#252b39;text-decoration:none;font-size:11px;font-weight:800;white-space:nowrap;padding:9px 10px;border-radius:20px}
+.lb-reference-nav>a:hover{color:#e65e69;background:#fff1f1}
+.lb-reference-nav .lb-all-categories,.lb-reference-nav .lb-todays-deals{background:#fff0ef;color:#a42f2e;padding:9px 15px}
+.lb-reference-nav .lb-todays-deals{margin-left:auto}
+.lb-reference-hero{width:100%;height:326px;position:relative;overflow:hidden;background:#f8eee8;display:flex;align-items:center}
+.lb-reference-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff7f0 0%,#fff7f0f2 31%,#fff7f066 53%,transparent 77%);pointer-events:none}
+.lb-reference-hero-image{position:absolute;right:0;top:0;width:72%;height:100%;object-fit:cover;object-position:center 42%}
+.lb-reference-hero-copy{position:relative;z-index:1;width:min(560px,50%);margin-left:max(6.3%,calc((100% - 1260px)/2));padding:20px 0}
+.lb-reference-hero-copy>small{font-size:11px;letter-spacing:1.8px;font-weight:900;color:#8c393b}
+.lb-reference-hero-copy h1{font:900 clamp(37px,4vw,52px)/.98 'Poppins','Nunito Sans',sans-serif;letter-spacing:-1.6px;color:#34323a;margin:13px 0 10px}
+.lb-reference-hero-copy h1 em{font-style:normal;color:#e76c72}
+.lb-reference-hero-copy>p{font-size:15px;color:#292b34;margin:0 0 20px}
+.lb-reference-perks{display:flex;gap:20px;margin-bottom:18px}
+.lb-reference-perks span{display:grid;grid-template-columns:34px auto;grid-template-rows:16px 16px;align-items:center;column-gap:8px;font-size:18px;color:#d65e69}
+.lb-reference-perks span: first-child{color:#d65e69}
+.lb-reference-perks span b{font-size:10px;color:#222a38;align-self:end}
+.lb-reference-perks span small{grid-column:2;font-size:10px;color:#5f626c}
+.lb-reference-hero-copy>a{display:inline-flex;align-items:center;gap:12px;background:#ed6b72;color:#fff;text-decoration:none;border-radius:28px;padding:12px 30px;font-size:13px;font-weight:900}
+.lb-hero-handwritten{position:absolute;right:7%;top:19%;z-index:2;color:#66514b;font:italic 19px/1.25 Georgia,serif;transform:rotate(-7deg)}
+.lb-hero-dots{position:absolute;z-index:2;bottom:12px;left:50%;color:#fff;letter-spacing:5px;font-size:13px}
+.lb-reference-categories{width:min(1400px,92%);margin:17px auto 15px;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px}
+.lb-reference-categories>button{border:0;border-radius:14px;min-width:0;min-height:100px;padding:9px 5px;background:#eef6f8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;color:#1f2837}
+.lb-reference-categories>button:nth-child(2){background:#fbf1e8}.lb-reference-categories>button:nth-child(3){background:#f8f2dc}.lb-reference-categories>button:nth-child(4){background:#f9eaf0}.lb-reference-categories>button:nth-child(5){background:#fff0e5}.lb-reference-categories>button:nth-child(6){background:#f9e9ef}.lb-reference-categories>button:nth-child(7){background:#f1eafa}.lb-reference-categories>button:nth-child(8){background:#edf4ed}.lb-reference-categories>button:nth-child(9){background:#f0f8f5}
+.lb-reference-categories>button>span{height:59px;width:100%;display:grid;place-items:center}
+.lb-reference-categories img{height:58px;width:70px;object-fit:contain}
+.lb-reference-categories strong{font-size:10px;line-height:1.1;text-align:center}
+.lb-category-emoji{font-size:35px;color:#0d9d96}
+.lb-reference-diaper-banner{width:min(1400px,92%);min-height:170px;margin:0 auto 20px;border-radius:18px;background:linear-gradient(105deg,#e2f2ef 0%,#f8f4e9 100%);display:grid;grid-template-columns:1.1fr 1.15fr .45fr 1fr;align-items:center;gap:10px;padding:16px 28px;overflow:hidden;position:relative}
+.lb-reference-diaper-copy h2{font:900 27px/1.08 'Poppins';color:#064b4a;margin:0 0 8px;letter-spacing:-.6px}
+.lb-reference-diaper-copy p{font-size:14px;color:#39706e;margin:0 0 14px}
+.lb-reference-diaper-copy>a{display:inline-flex;align-items:center;gap:8px;background:#07524e;color:#fff;text-decoration:none;border-radius:22px;padding:10px 22px;font-size:11px;font-weight:900}
+.lb-diaper-brand-stack{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.lb-diaper-brand-stack b{font-size:17px;background:#fff;border-radius:9px;padding:12px;color:#0b9d9c;box-shadow:0 4px 14px #194f4b14}
+.lb-diaper-brand-stack b:nth-child(2){color:#ed4e63}.lb-diaper-brand-stack b:nth-child(3){color:#1a4c9b}.lb-diaper-brand-stack b:nth-child(4){color:#e43e64}
+.lb-diaper-discount{height:78px;width:78px;border-radius:50%;background:#e96872;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.lb-diaper-discount small{font-size:9px}.lb-diaper-discount strong{font-size:27px}
+.lb-reference-diaper-points{display:flex;flex-direction:column;gap:13px}
+.lb-reference-diaper-points span{display:grid;grid-template-columns:36px auto;align-items:center;column-gap:9px;color:#0d8f89;font-size:20px}
+.lb-reference-diaper-points b{font-size:11px;color:#172c35}.lb-reference-diaper-points small{grid-column:2;font-size:10px;color:#52656b}
+.lb-reference-brands,.lb-reference-best,.lb-reference-promo-grid,.lb-reference-benefits{width:min(1400px,92%);margin-left:auto;margin-right:auto}
+.lb-reference-section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:15px 0 10px}
+.lb-reference-section-heading h2{font:900 18px 'Poppins';color:#252c3d;margin:0}
+.lb-reference-section-heading>a{font-size:10px;color:#5d6571;text-decoration:none;white-space:nowrap}
+.lb-brand-pills{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px}
+.lb-brand-pill{height:53px;border:1px solid #eceef0;border-radius:12px;display:grid;place-items:center;font-size:16px;font-weight:1000;letter-spacing:-.6px;color:#00a69b;background:#fff}
+.lb-brand-pill.brand-1{color:#ed2029}.lb-brand-pill.brand-2{color:#1853a4}.lb-brand-pill.brand-3{color:#e63259}.lb-brand-pill.brand-4{color:#ed2937}.lb-brand-pill.brand-5{color:#143d82}.lb-brand-pill.brand-6{color:#234e9c}.lb-brand-pill.brand-7{color:#4a358b}.lb-brand-pill.brand-8{color:#159bc1}
+.lb-reference-best{margin-top:22px;margin-bottom:14px}
+.lb-reference-deals-heading{margin-bottom:13px}
+.lb-reference-deals-heading h2{white-space:nowrap}
+.lb-reference-tabs{display:flex;align-items:center;gap:22px;flex:1;justify-content:center}
+.lb-reference-tabs button{border:0;background:transparent;color:#606572;padding:8px 2px;font-size:12px;white-space:nowrap;cursor:pointer}
+.lb-reference-tabs button.active{color:#e65e69;border-bottom:2px solid #e65e69}
+.lb-reference-product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.lb-reference-product-grid article{min-width:0;border:1px solid #eceef0;border-radius:14px;background:#fff;padding:10px 10px 12px;box-shadow:0 3px 12px #202c3b05}
+.lb-reference-product-image{height:132px;position:relative;background:#fff;display:grid;place-items:center}
+.lb-reference-product-image>a{height:100%;width:100%;display:grid;place-items:center}
+.lb-reference-product-image img{width:100%;height:100%;object-fit:contain;padding:5px}
+.lb-reference-product-image>button{position:absolute;right:3px;top:3px;border:0;background:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;color:#f06b78}
+.lb-reference-product-image>button svg{width:16px}
+.lb-reference-product-info h3{font-size:11px;line-height:1.35;min-height:30px;margin:5px 0 2px;color:#283044}
+.lb-reference-product-info h3 a{color:inherit;text-decoration:none}
+.lb-reference-product-info>small{font-size:10px;color:#747b87}
+.lb-reference-price{display:flex;align-items:center;gap:6px;margin:8px 0}
+.lb-reference-price b{font-size:16px;color:#222838}
+.lb-reference-price del{font-size:10px;color:#a1a4aa}
+.lb-reference-price i{font-style:normal;font-size:9px;color:#18834e;background:#e5f5ed;border-radius:5px;padding:4px 5px;margin-left:auto;white-space:nowrap}
+.lb-reference-add{display:flex;align-items:center;justify-content:center;width:100%;height:34px;border:0;border-radius:20px;background:#ed6b72;color:#fff;text-decoration:none;font-size:11px;font-weight:900;cursor:pointer}
+.lb-reference-pagination{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.lb-reference-pagination button{border:1px solid #e8e9eb;background:#fff;border-radius:50%;width:30px;height:30px;cursor:pointer}
+.lb-reference-promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;margin-bottom:20px}
+.lb-reference-promo{height:130px;border-radius:15px;position:relative;overflow:hidden;display:flex;align-items:center;padding:20px 25px;text-decoration:none}
+.lb-reference-promo.feeding{background:#f8e8ec;color:#ad2635}.lb-reference-promo.bath{background:#dff0f0;color:#287b8b}
+.lb-reference-promo>div{position:relative;z-index:2}
+.lb-reference-promo h2{font:900 18px 'Poppins';margin:0 0 4px}
+.lb-reference-promo p{font-size:12px;margin:0 0 10px;color:#303d48}
+.lb-reference-promo span{display:inline-block;background:#fff;border-radius:20px;padding:8px 15px;font-size:10px;color:#303b4a}
+.lb-reference-promo img{position:absolute;right:0;bottom:0;width:54%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.9;mask-image:linear-gradient(90deg,transparent 0%,black 30%)}
+.lb-reference-benefits{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:12px 0 20px;border-bottom:1px solid #f0f0f0}
+.lb-reference-benefits>span{display:grid;grid-template-columns:38px auto;grid-template-rows:16px 16px;align-items:center;column-gap:8px;border-right:1px solid #eee;padding:0 10px;color:#168d86;font-size:20px}
+.lb-reference-benefits>span b{font-size:10px;color:#283043;align-self:end}
+.lb-reference-benefits>span small{grid-column:2;font-size:9px;color:#697180}
+.lb-footer{width:100%;background:#fff!important;color:#303747!important;margin:0;padding:22px max(4.2%,calc((100% - 1400px)/2)) 10px}
+.lb-footer-main{grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:30px;padding-bottom:15px}
+.lb-footer-main h3{color:#222b3b;text-transform:none;letter-spacing:0;font-size:11px}
+.lb-footer-main a{color:#68707b;font-size:10px}
+.lb-footer-about p{color:#707783;font-size:10px;max-width:240px}
+.lb-footer-about .lb-brand-logo-word{color:#07524e}
+.lb-footer-about .lb-brand-logo-word small{color:#777}
+.lb-footer-social a{color:#ed6872}
+.lb-footer-main>div>small{color:#737b86}
+.lb-footer-bottom{border-color:#eee;color:#777;font-size:10px}
+@media(max-width:1050px){
+ .lb-header-top{grid-template-columns:190px 1fr auto;gap:14px}
+ .lb-reference-nav{gap:2px}.lb-reference-nav>a{font-size:10px;padding:8px 6px}
+ .lb-reference-hero{height:300px}.lb-reference-categories{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .lb-reference-diaper-banner{grid-template-columns:1fr 1fr .4fr}.lb-reference-diaper-points{grid-column:1/-1;flex-direction:row;justify-content:space-around}
+ .lb-brand-pills{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .lb-reference-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .lb-reference-deals-heading{flex-wrap:wrap}.lb-reference-tabs{order:3;flex-basis:100%;justify-content:flex-start}
+}
+@media(max-width:650px){
+ .lb-reference-head{padding:8px 4%;gap:8px}
+ .lb-header-top{grid-template-columns:1fr auto;gap:8px}
+ .lb-header-top>.lb-brand-logo{grid-column:1}
+ .lb-reference-head .lb-search{grid-column:1/-1;grid-row:2;width:100%;max-width:none}
+ .lb-reference-head .lb-actions{grid-column:2;grid-row:1;gap:10px}
+ .lb-reference-head .lb-actions button span{display:none}
+ .lb-reference-nav{height:auto;overflow-x:auto;justify-content:flex-start;padding:3px 0 5px}
+ .lb-reference-nav>a{font-size:10px;flex:0 0 auto}
+ .lb-reference-hero{height:340px;align-items:flex-start}
+ .lb-reference-hero-image{width:100%;height:100%;object-position:62% center;opacity:.8}
+ .lb-reference-hero:after{background:linear-gradient(90deg,#fff7f0f5 0%,#fff7f0c9 50%,#fff7f030 100%)}
+ .lb-reference-hero-copy{width:75%;margin-left:5%;padding-top:35px}
+ .lb-reference-hero-copy h1{font-size:37px}
+ .lb-reference-hero-copy>p{font-size:12px;max-width:250px}
+ .lb-reference-perks{gap:8px;flex-wrap:wrap}.lb-reference-perks span{grid-template-columns:25px auto;font-size:15px;column-gap:4px}.lb-reference-perks span b,.lb-reference-perks span small{font-size:8px}
+ .lb-hero-handwritten{right:4%;top:12%;font-size:13px}
+ .lb-reference-categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+ .lb-reference-categories>button{min-height:92px}.lb-reference-categories img{height:50px;width:60px}
+ .lb-reference-diaper-banner{grid-template-columns:1fr .6fr;gap:10px;padding:16px;min-height:0}
+ .lb-reference-diaper-copy h2{font-size:22px}.lb-diaper-brand-stack{grid-column:2;grid-row:1/3}.lb-diaper-brand-stack b{font-size:11px;padding:8px}
+ .lb-diaper-discount{position:absolute;right:12px;top:12px;width:54px;height:54px}.lb-diaper-discount strong{font-size:18px}
+ .lb-reference-diaper-points{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:7px}
+ .lb-reference-diaper-points span{font-size:15px;grid-template-columns:28px auto}.lb-reference-diaper-points b{font-size:9px}.lb-reference-diaper-points small{font-size:8px}
+ .lb-reference-brands,.lb-reference-best,.lb-reference-promo-grid,.lb-reference-benefits{width:92%}
+ .lb-reference-section-heading h2{font-size:15px}
+ .lb-brand-pills{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .lb-brand-pill{height:44px;font-size:13px}
+ .lb-reference-deals-heading{align-items:flex-start}.lb-reference-deals-heading h2{white-space:normal;max-width:65%}
+ .lb-reference-tabs{gap:14px;overflow:auto;justify-content:flex-start}.lb-reference-tabs button{font-size:10px}
+ .lb-reference-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .lb-reference-product-grid article{padding:7px;border-radius:10px}
+ .lb-reference-product-image{height:125px}
+ .lb-reference-product-info h3{font-size:10px;min-height:28px}
+ .lb-reference-price b{font-size:14px}.lb-reference-price i{font-size:8px}
+ .lb-reference-add{height:31px;font-size:10px}
+ .lb-reference-promo-grid{grid-template-columns:1fr;gap:9px}
+ .lb-reference-promo{height:116px;padding:14px}
+ .lb-reference-promo h2{font-size:15px}.lb-reference-promo p{font-size:10px}
+ .lb-reference-promo img{width:48%}
+ .lb-reference-benefits{grid-template-columns:repeat(2,1fr);gap:8px}
+ .lb-reference-benefits>span{padding:5px;border:0;grid-template-columns:30px auto;font-size:16px}
+ .lb-reference-benefits>span b{font-size:9px}.lb-reference-benefits>span small{font-size:8px}
+ .lb-footer{padding:22px 4% 12px}.lb-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.lb-footer-about{grid-column:1/-1}
+ .lb-footer-bottom{font-size:9px}
+}
