@@ -1034,3 +1034,35 @@ body{background:#fff;color:#17243b}
   mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;
  }
 }
+
+
+/* Visible edge blend: overlay the artwork edges with the same warm page tone */
+.lb-reference-hero.lb-reference-hero-artwork{
+ position:relative!important;
+ isolation:isolate!important;
+ background:#fff6f0!important;
+}
+.lb-reference-hero.lb-reference-hero-artwork::before{
+ content:""!important;
+ display:block!important;
+ position:absolute!important;
+ inset:0!important;
+ z-index:1!important;
+ pointer-events:none!important;
+ background:linear-gradient(90deg,
+  #fff6f0 0%,
+  rgba(255,246,240,.96) 3%,
+  rgba(255,246,240,.78) 5%,
+  rgba(255,246,240,.42) 8%,
+  rgba(255,246,240,.12) 12%,
+  rgba(255,246,240,0) 16%,
+  rgba(255,246,240,0) 84%,
+  rgba(255,246,240,.12) 88%,
+  rgba(255,246,240,.42) 92%,
+  rgba(255,246,240,.78) 95%,
+  rgba(255,246,240,.96) 97%,
+  #fff6f0 100%)!important;
+}
+.lb-reference-hero-artwork .lb-hero-image-link{z-index:0!important;}
+.lb-reference-hero-artwork .lb-hero-copy-visible,
+.lb-reference-hero-artwork .lb-hero-dots{z-index:2!important;}
