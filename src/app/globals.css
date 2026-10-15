@@ -984,3 +984,27 @@ body{background:#fff;color:#17243b}
  .lb-hero-copy-visible>a{min-width:120px!important;padding:9px 15px!important;font-size:11px!important;}
  .lb-hero-dots{right:4%!important;bottom:8px!important;}
 }
+
+
+/* Match compact hero height from the supplied full-homepage reference */
+.lb-reference-hero.lb-reference-hero-artwork{
+ height:clamp(245px,32vw,360px)!important;
+ min-height:0!important;
+ max-height:360px!important;
+ aspect-ratio:auto!important;
+}
+.lb-reference-hero-artwork .lb-reference-hero-image{
+ object-position:center 43%!important;
+}
+.lb-reference-hero-artwork .lb-hero-copy-visible{
+ top:50%!important;
+}
+@media(min-width:1200px){
+ .lb-reference-hero.lb-reference-hero-artwork{height:360px!important;max-height:360px!important;}
+}
+@media(max-width:700px){
+ .lb-reference-hero.lb-reference-hero-artwork{
+  height:clamp(260px,72vw,340px)!important;
+  max-height:340px!important;
+ }
+}
