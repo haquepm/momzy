@@ -819,3 +819,8 @@ body{background:#fff;color:#17243b}
  .lb-footer{padding:22px 4% 12px}.lb-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.lb-footer-about{grid-column:1/-1}
  .lb-footer-bottom{font-size:9px}
 }
+
+/* Official uploaded Little Basket emblem used by the shared logo component. */
+.lb-brand-logo-mark{overflow:hidden;background:transparent;border-radius:0}
+.lb-brand-logo-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.lb-brand-logo.compact .lb-brand-logo-mark{width:40px;height:40px}
