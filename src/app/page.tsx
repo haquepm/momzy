@@ -79,10 +79,10 @@ return <main className="lb">
   <small>PREMIUM CARE FOR YOUR LITTLE ONE</small>
   <h1>Everything Your<br/><em>Baby Needs</em></h1>
   <p>Top brands. Best prices. Happier little moments.</p>
-  <div className="lb-reference-perks">
-   <span><b>Best Price</b><small>Comparison</small></span>
-   <span><b>100% Genuine</b><small>Products</small></span>
-   <span><b>Fast &amp; Reliable</b><small>Delivery</small></span>
+  <div className="lb-hero-perks">
+   <div className="lb-hero-perk"><span className="lb-hero-perk-icon"><Heart size={17}/></span><span className="lb-hero-perk-copy"><b>Best Price</b><small>Comparison</small></span></div>
+   <div className="lb-hero-perk"><span className="lb-hero-perk-icon"><ShieldCheck size={18}/></span><span className="lb-hero-perk-copy"><b>100% Genuine</b><small>Products</small></span></div>
+   <div className="lb-hero-perk"><span className="lb-hero-perk-icon"><Truck size={18}/></span><span className="lb-hero-perk-copy"><b>Fast &amp; Reliable</b><small>Delivery</small></span></div>
   </div>
   <a href="/diapers">Shop Now <ArrowRight size={17}/></a>
  </div>
