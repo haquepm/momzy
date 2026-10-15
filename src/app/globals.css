@@ -655,3 +655,6 @@ body{background:#fff;color:#17243b}
  .lb-products{gap:7px}
  .lb-product-image{height:145px}
 }
+
+/* Keep the page composition close to the supplied reference: one feature story and one editorial strip. */
+.lb-editorial,.lb-quote{display:none!important}
