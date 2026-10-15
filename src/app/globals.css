@@ -1015,3 +1015,22 @@ body{background:#fff;color:#17243b}
 .lb-reference-hero-artwork .lb-reference-hero-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;}
 .lb-reference-hero-artwork .lb-hero-copy-visible{top:50%!important;left:6%!important;width:43%!important;max-width:720px!important;}
 @media(max-width:700px){.lb-reference-hero.lb-reference-hero-artwork{aspect-ratio:1.3/1!important;height:auto!important;}.lb-reference-hero-artwork .lb-reference-hero-image{object-fit:cover!important;object-position:68% top!important;}}
+
+
+/* Softly blend the hero artwork into the page background at both sides */
+.lb-reference-hero.lb-reference-hero-artwork{
+ background:#fff6f0!important;
+}
+.lb-reference-hero-artwork .lb-hero-image-link{
+ background:#fff6f0!important;
+}
+.lb-reference-hero-artwork .lb-reference-hero-image{
+ -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.18) 3%,#000 10%,#000 90%,rgba(0,0,0,.18) 97%,transparent 100%)!important;
+ mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.18) 3%,#000 10%,#000 90%,rgba(0,0,0,.18) 97%,transparent 100%)!important;
+}
+@media(max-width:700px){
+ .lb-reference-hero-artwork .lb-reference-hero-image{
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;
+ }
+}
