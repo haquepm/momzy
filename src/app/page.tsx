@@ -73,7 +73,7 @@ return <main className="lb">
 </header>
 <section className="lb-reference-hero lb-reference-hero-artwork" aria-label="Little Basket baby care banner">
  <div className="lb-hero-image-link" aria-hidden="true">
-  <img className="lb-reference-hero-image" src="/category-images/hero/hero-banner-wide.png" alt=""/>
+  <img className="lb-reference-hero-image" src="/category-images/hero/New%20Project.webp" alt=""/>
  </div>
  <div className="lb-reference-hero-copy lb-hero-copy-visible">
   <small>PREMIUM CARE FOR YOUR LITTLE ONE</small>
