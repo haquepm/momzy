@@ -68,7 +68,7 @@ const wishProducts=products.filter(p=>wish.includes(p.id));
 const placeOrder=async()=>{
  if(!supabase){setOrderMessage("Checkout is not configured.");return;}
  if(!userEmail){setPanel("account");setAuthMessage("Please sign in before checkout.");return;}
- if(!customerName.trim()||!phone.trim()||!address.trim()||!city.trim()||!customerState.trim()||!/^\\d{6}$/.test(pincode)){
+ if(!customerName.trim()||!phone.trim()||!address.trim()||!city.trim()||!customerState.trim()||!/^\d{6}$/.test(pincode)){
   setOrderMessage("Please complete all delivery details and enter a valid 6-digit pincode.");return;
  }
  if(cart.some(x=>! /^[0-9a-f-]{36}$/i.test(x.product.id))){
