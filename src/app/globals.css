@@ -1034,3 +1034,14 @@ body{background:#fff;color:#17243b}
   mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;
  }
 }
+
+
+/* Checkout payment method selector */
+.lb-payment-options{display:flex;flex-direction:column;gap:8px;margin:5px 0 2px}
+.lb-payment-options h4{margin:0 0 2px;color:#172b4d;font:800 13px 'Poppins'}
+.lb-payment-options label{display:flex;align-items:center;gap:10px;border:1px solid #e1e7ef;border-radius:12px;padding:11px 12px;background:#fff;cursor:pointer;transition:border-color .18s,background .18s}
+.lb-payment-options label.selected{border-color:#f36a83;background:#fff7f8;box-shadow:0 0 0 2px rgba(243,106,131,.08)}
+.lb-payment-options input[type=radio]{width:17px;height:17px;flex:0 0 17px;margin:0;accent-color:#f05e7b}
+.lb-payment-options label span{display:flex;flex-direction:column;gap:2px}
+.lb-payment-options label b{font:700 13px 'Poppins';color:#172b4d}
+.lb-payment-options label small{font:12px 'Nunito Sans';color:#718096}
