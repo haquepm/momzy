@@ -1045,3 +1045,17 @@ body{background:#fff;color:#17243b}
 .lb-payment-options label span{display:flex;flex-direction:column;gap:2px}
 .lb-payment-options label b{font:700 13px 'Poppins';color:#172b4d}
 .lb-payment-options label small{font:12px 'Nunito Sans';color:#718096}
+
+
+/* Payment choices: keep the radio, title and helper copy aligned as one card. */
+.lb-checkout-form .lb-payment-options{display:flex;flex-direction:column;gap:9px;margin:12px 0 4px;width:100%;min-width:0}
+.lb-checkout-form .lb-payment-options h4{margin:0 0 3px;font:800 15px 'Poppins';color:#172b4d}
+.lb-checkout-form .lb-payment-options>label{box-sizing:border-box;width:100%;min-height:66px;display:grid;grid-template-columns:20px minmax(0,1fr);align-items:center;column-gap:12px;padding:12px 14px;margin:0;border:1px solid #e3e8f0;border-radius:13px;background:#fff;cursor:pointer;text-align:left}
+.lb-checkout-form .lb-payment-options>label.selected{border-color:#f36a83;background:#fff7f8;box-shadow:0 0 0 2px rgba(243,106,131,.09)}
+.lb-checkout-form .lb-payment-options>label>input[type="radio"]{appearance:auto;display:block;box-sizing:border-box;width:18px;height:18px;min-width:18px;margin:0;padding:0;border:0;background:transparent;accent-color:#f05e7b;cursor:pointer}
+.lb-checkout-form .lb-payment-options>label>span{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.35}
+.lb-checkout-form .lb-payment-options>label>span>b{display:block;font:700 14px 'Poppins';color:#172b4d}
+.lb-checkout-form .lb-payment-options>label>span>small{display:block;font:12px/1.4 'Nunito Sans';color:#718096;white-space:normal}
+.lb-checkout-form .lb-payment-options+p{margin:5px 0 9px}
+.lb-checkout-form .lb-checkout{min-height:52px}
+@media(max-width:560px){.lb-checkout-form .lb-payment-options>label{min-height:62px;padding:11px 12px}}
