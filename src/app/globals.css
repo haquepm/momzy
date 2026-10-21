@@ -1096,3 +1096,19 @@ body{background:#fff;color:#17243b}
  .lb-diaper-banner-art .lb-reference-diaper-points small{white-space:normal;font-size:7px}
 }
 @media(max-width:390px){.lb-diaper-banner-art .lb-reference-diaper-points{grid-template-columns:1fr}.lb-diaper-banner-art .lb-reference-diaper-points span{grid-template-columns:22px 1fr}}
+
+
+/* Use the supplied pastel diaper-pack artwork as the full banner background. */
+.lb-reference-diaper-banner.lb-diaper-banner-art{
+ background:#edf5ee url("/category-images/promotions/diaper-deals-banner.webp") center center / 100% 100% no-repeat!important;
+}
+.lb-diaper-product-art{background:transparent!important}
+.lb-diaper-product-art:after{display:none!important}
+.lb-diaper-product-art .pack{display:none!important}
+.lb-diaper-sale-badge{right:2%!important;top:2%!important}
+@media(max-width:700px){
+ .lb-reference-diaper-banner.lb-diaper-banner-art{
+  background-size:auto 100%!important;
+  background-position:center!important;
+ }
+}
