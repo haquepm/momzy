@@ -1059,3 +1059,40 @@ body{background:#fff;color:#17243b}
 .lb-checkout-form .lb-payment-options+p{margin:5px 0 9px}
 .lb-checkout-form .lb-checkout{min-height:52px}
 @media(max-width:560px){.lb-checkout-form .lb-payment-options>label{min-height:62px;padding:11px 12px}}
+
+
+/* Diaper deals banner — compact illustrated layout matching the supplied reference */
+.lb-reference-diaper-banner.lb-diaper-banner-art{
+ width:min(1400px,92%);min-height:0;height:clamp(112px,10vw,180px);
+ margin:0 auto 20px;padding:12px 16px 10px 3%;
+ box-sizing:border-box;border-radius:18px;overflow:hidden;
+ display:grid;grid-template-columns:26% 47% 27%;gap:0;align-items:center;
+ background:linear-gradient(105deg,#e5f3ef 0%,#eff4e9 55%,#f8f3e7 100%);
+}
+.lb-diaper-banner-art .lb-reference-diaper-copy h2{font:900 clamp(17px,1.7vw,27px)/1.08 'Poppins';letter-spacing:-.7px;margin:0 0 6px;color:#064b4a}
+.lb-diaper-banner-art .lb-reference-diaper-copy p{font-size:clamp(9px,.9vw,14px);margin:0 0 10px;color:#39706e;white-space:nowrap}
+.lb-diaper-banner-art .lb-reference-diaper-copy>a{padding:9px 18px;font-size:clamp(9px,.75vw,11px);white-space:nowrap}
+.lb-diaper-product-art{height:100%;min-width:0;position:relative;display:flex;align-items:flex-end;justify-content:center;padding:4px 9% 0}
+.lb-diaper-product-art:after{content:"";position:absolute;bottom:4px;left:8%;right:8%;height:10px;border-radius:50%;background:#d8c59a;filter:blur(7px);opacity:.55}
+.lb-diaper-product-art .pack{position:absolute;bottom:7px;object-fit:contain;max-height:90%;width:24%;z-index:1;filter:drop-shadow(0 3px 3px #243b301c)}
+.lb-diaper-product-art .pack-teal{height:88%;width:27%;left:27%;z-index:1}
+.lb-diaper-product-art .pack-blue{height:68%;width:26%;left:12%;z-index:2}
+.lb-diaper-product-art .pack-peach{height:64%;width:27%;left:42%;z-index:3}
+.lb-diaper-product-art .pack-pink{height:75%;width:25%;left:57%;z-index:2}
+.lb-diaper-sale-badge{position:absolute;z-index:5;top:0;right:3%;width:clamp(42px,4.8vw,68px);height:clamp(42px,4.8vw,68px);border-radius:50%;background:#ef6375;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.lb-diaper-sale-badge small{font-size:clamp(5px,.48vw,7px)}
+.lb-diaper-sale-badge b{font-size:clamp(17px,1.65vw,25px)}
+.lb-diaper-banner-art .lb-reference-diaper-points{gap:clamp(7px,1vw,14px);padding-left:8%}
+.lb-diaper-banner-art .lb-reference-diaper-points span{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:7px;align-items:center;color:#078f89;font-size:16px}
+.lb-diaper-banner-art .lb-reference-diaper-points i{grid-row:span 2;font-style:normal;font-size:17px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#d7eee6}
+.lb-diaper-banner-art .lb-reference-diaper-points b{font-size:clamp(8px,.72vw,11px);white-space:nowrap}
+.lb-diaper-banner-art .lb-reference-diaper-points small{grid-column:2;font-size:clamp(7px,.65vw,10px);white-space:nowrap}
+@media(max-width:700px){
+ .lb-reference-diaper-banner.lb-diaper-banner-art{height:auto;min-height:0;grid-template-columns:1fr 1fr;padding:16px;gap:8px}
+ .lb-diaper-product-art{grid-column:2;grid-row:1/3;min-height:145px}
+ .lb-diaper-banner-art .lb-reference-diaper-points{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;padding:8px 0 0;gap:5px}
+ .lb-diaper-banner-art .lb-reference-diaper-points span{grid-template-columns:20px 1fr;column-gap:4px}
+ .lb-diaper-banner-art .lb-reference-diaper-points b{white-space:normal;font-size:8px}
+ .lb-diaper-banner-art .lb-reference-diaper-points small{white-space:normal;font-size:7px}
+}
+@media(max-width:390px){.lb-diaper-banner-art .lb-reference-diaper-points{grid-template-columns:1fr}.lb-diaper-banner-art .lb-reference-diaper-points span{grid-template-columns:22px 1fr}}
