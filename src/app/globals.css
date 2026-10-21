@@ -1115,8 +1115,7 @@ body{background:#fff;color:#17243b}
 
 
 
-/* Match the supplied banner artwork's native 1828 × 300 proportion.
-   The previous fixed short height stretched the artwork horizontally. */
+/* Latest uploaded banner artwork: Diaper Banner.webp */
 .lb-reference-diaper-banner.lb-diaper-banner-art{
  position:relative!important;
  isolation:isolate;
@@ -1127,7 +1126,7 @@ body{background:#fff;color:#17243b}
  box-sizing:border-box;
  padding:12px 16px 10px 3%;
  background-color:#edf5ee!important;
- background-image:url("/category-images/promotions/Pastel%20Baby%20Care%20Diaper%20Banner.png")!important;
+ background-image:url("/category-images/promotions/Diaper%20Banner.webp")!important;
  background-repeat:no-repeat!important;
  background-position:center center!important;
  background-size:100% 100%!important;
