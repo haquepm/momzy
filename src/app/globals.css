@@ -1100,7 +1100,7 @@ body{background:#fff;color:#17243b}
 
 /* Use the supplied pastel diaper-pack artwork as the full banner background. */
 .lb-reference-diaper-banner.lb-diaper-banner-art{
- background:#edf5ee url("/category-images/promotions/diaper-deals-banner.webp") center center / 100% 100% no-repeat!important;
+ background:#edf5ee url("/category-images/promotions/Pastel%20Baby%20Care%20Diaper%20Banner.png") center center / 100% 100% no-repeat!important;
 }
 .lb-diaper-product-art{background:transparent!important}
 .lb-diaper-product-art:after{display:none!important}
@@ -1115,12 +1115,14 @@ body{background:#fff;color:#17243b}
 
 
 
-/* Final banner artwork: use the complete wide image as the section background. */
+/* Use the customer's latest supplied diaper banner PNG. */
 .lb-reference-diaper-banner.lb-diaper-banner-art{
  position:relative!important;isolation:isolate;
  background-color:#edf5ee!important;
- background-image:url("/category-images/promotions/diaper-deals-banner.webp")!important;
- background-repeat:no-repeat!important;background-position:center center!important;background-size:100% 100%!important;
+ background-image:url("/category-images/promotions/Pastel%20Baby%20Care%20Diaper%20Banner.png")!important;
+ background-repeat:no-repeat!important;
+ background-position:center center!important;
+ background-size:100% 100%!important;
 }
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-reference-diaper-copy,
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art,
@@ -1128,4 +1130,6 @@ body{background:#fff;color:#17243b}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art{background:transparent!important}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art .pack{display:none!important}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art:after{display:none!important}
-@media(max-width:700px){.lb-reference-diaper-banner.lb-diaper-banner-art{background-size:cover!important;background-position:center!important}}
+@media(max-width:700px){
+ .lb-reference-diaper-banner.lb-diaper-banner-art{background-size:cover!important;background-position:center!important}
+}
