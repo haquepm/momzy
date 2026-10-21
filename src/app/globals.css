@@ -1150,3 +1150,12 @@ body{background:#fff;color:#17243b}
  .lb-diaper-product-art{grid-column:2;grid-row:1/3;min-height:100px}
  .lb-diaper-banner-art .lb-reference-diaper-points{grid-column:1/-1}
 }
+
+
+/* Category tiles: larger, fully visible artwork */
+.lb-reference-categories>button{min-height:132px;padding:10px 6px;gap:5px}
+.lb-reference-categories>button>span{width:88px;height:88px;flex:0 0 88px}
+.lb-reference-categories img{display:block;width:88px;height:88px;max-width:100%;object-fit:cover;border-radius:12px;background:transparent}
+.lb-reference-categories strong{font-size:11px}
+@media(max-width:850px){.lb-reference-categories>button>span{width:72px;height:72px;flex-basis:72px}.lb-reference-categories img{width:72px;height:72px}}
+@media(max-width:560px){.lb-reference-categories>button{min-height:112px}.lb-reference-categories>button>span{width:65px;height:65px;flex-basis:65px}.lb-reference-categories img{width:65px;height:65px}}
