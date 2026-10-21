@@ -1159,3 +1159,61 @@ body{background:#fff;color:#17243b}
 .lb-reference-categories strong{font-size:11px}
 @media(max-width:850px){.lb-reference-categories>button>span{width:72px;height:72px;flex-basis:72px}.lb-reference-categories img{width:72px;height:72px}}
 @media(max-width:560px){.lb-reference-categories>button{min-height:112px}.lb-reference-categories>button>span{width:65px;height:65px;flex-basis:65px}.lb-reference-categories img{width:65px;height:65px}}
+
+
+/* Category strip: match the compact reference tiles and keep the artwork contained. */
+.lb-reference-categories{
+  width:min(1400px,92%)!important;
+  margin:17px auto 15px!important;
+  display:grid!important;
+  grid-template-columns:repeat(9,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+.lb-reference-categories>button{
+  box-sizing:border-box!important;
+  height:122px!important;
+  min-height:122px!important;
+  padding:8px 5px!important;
+  gap:4px!important;
+  border-radius:16px!important;
+  justify-content:center!important;
+}
+.lb-reference-categories>button>span{
+  display:grid!important;
+  place-items:center!important;
+  width:76px!important;
+  height:76px!important;
+  flex:0 0 76px!important;
+  overflow:visible!important;
+  border-radius:12px!important;
+}
+.lb-reference-categories img{
+  display:block!important;
+  width:76px!important;
+  height:76px!important;
+  max-width:76px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  border-radius:12px!important;
+  background:transparent!important;
+}
+.lb-reference-categories strong{
+  font-size:12px!important;
+  line-height:1.15!important;
+  font-weight:600!important;
+  white-space:nowrap!important;
+}
+.lb-reference-categories .lb-category-emoji{
+  font-size:29px!important;
+}
+@media(max-width:1050px){
+ .lb-reference-categories{grid-template-columns:repeat(5,minmax(0,1fr))!important;}
+}
+@media(max-width:650px){
+ .lb-reference-categories{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;margin-top:12px!important;}
+ .lb-reference-categories>button{height:112px!important;min-height:112px!important;padding:7px 4px!important;}
+ .lb-reference-categories>button>span{width:68px!important;height:68px!important;flex-basis:68px!important;}
+ .lb-reference-categories img{width:68px!important;height:68px!important;max-width:68px!important;}
+ .lb-reference-categories strong{font-size:11px!important;}
+}
