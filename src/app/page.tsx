@@ -12,28 +12,28 @@ const demo:Product[]=[
 {id:"demo-1",name:"Pampers Baby Dry Diapers (74 Count)",image_url:"/category-images/products/diaper-pack-blue.webp",mrp:1199,selling_price:899,category_name:"Diapers & Wipes"},
 {id:"demo-2",name:"Cetaphil Baby Gentle Wash & Shampoo (400ml)",image_url:"/category-images/promotions/bath-skincare.webp",mrp:850,selling_price:699,category_name:"Baby Bath & Skincare"},
 {id:"demo-3",name:"Philips Avent Natural Feeding Bottle (260ml)",image_url:"/category-images/products/diaper-pack-teal.webp",mrp:750,selling_price:599,category_name:"Feeding Essentials"},
-{id:"demo-4",name:"Babyhug Cotton Clothing Set (5 Pieces)",image_url:"/category-images/categories/clothing.webp",mrp:999,selling_price:799,category_name:"Clothing & Accessories"},
+{id:"demo-4",name:"Babyhug Cotton Clothing Set (5 Pieces)",image_url:"/category-images/Categories/Clothing.png",mrp:999,selling_price:799,category_name:"Clothing & Accessories"},
 {id:"demo-5",name:"Fisher-Price Baby Learning Toy",image_url:"/category-images/promotions/baby-gift-basket.webp",mrp:1699,selling_price:1299,category_name:"Toys & Learning"},
 {id:"demo-6",name:"Himalaya Baby Massage Cream (200ml)",image_url:"/category-images/promotions/bath-skincare.webp",mrp:600,selling_price:450,category_name:"Baby Bath & Skincare"}
 ];
 const demoCats:Category[]=[
-{id:"c1",name:"Diapers & Wipes",image_url:"/category-images/categories/diapers.webp"},
-{id:"c2",name:"Baby Bath & Skincare",image_url:"/category-images/categories/bath-skincare.webp"},
-{id:"c3",name:"Feeding Essentials",image_url:"/category-images/categories/feeding.webp"},
-{id:"c4",name:"Clothing & Accessories",image_url:"/category-images/categories/clothing.webp"},
-{id:"c5",name:"Toys & Learning",image_url:"/category-images/categories/toys-learning.webp"},
-{id:"c6",name:"Gear & Travel",image_url:"/category-images/categories/nursery.webp"},
-{id:"c7",name:"Mom Care",image_url:"/category-images/categories/health-safety.webp"}
+{id:"c1",name:"Diapers & Wipes",image_url:"/category-images/Categories/diaper.png"},
+{id:"c2",name:"Baby Bath & Skincare",image_url:"/category-images/Categories/bath%20and%20skin.png"},
+{id:"c3",name:"Feeding Essentials",image_url:"/category-images/Categories/Feeding.png"},
+{id:"c4",name:"Clothing & Accessories",image_url:"/category-images/Categories/Clothing.png"},
+{id:"c5",name:"Toys & Learning",image_url:"/category-images/Categories/Toys%20%26%20Learning.png"},
+{id:"c6",name:"Gear & Travel",image_url:"/category-images/Categories/Nursery.png"},
+{id:"c7",name:"Mom Care",image_url:"/category-images/Categories/Health%20%26%20Safety.png"}
 ];
 const CATEGORY_IMAGES:Record<string,string>={
-"Diapers & Wipes":"/category-images/categories/diapers.webp",
-"Baby Bath & Skincare":"/category-images/categories/bath-skincare.webp",
-"Feeding Essentials":"/category-images/categories/feeding.webp",
-"Clothing & Accessories":"/category-images/categories/clothing.webp",
-"Toys & Learning":"/category-images/categories/toys-learning.webp",
-"Gear & Travel":"/category-images/categories/nursery.webp",
-"Baby Gear & Cradle Accessories":"/category-images/categories/nursery.webp",
-"Mom Care":"/category-images/categories/health-safety.webp"
+"Diapers & Wipes":"/category-images/Categories/diaper.png",
+"Baby Bath & Skincare":"/category-images/Categories/bath%20and%20skin.png",
+"Feeding Essentials":"/category-images/Categories/Feeding.png",
+"Clothing & Accessories":"/category-images/Categories/Clothing.png",
+"Toys & Learning":"/category-images/Categories/Toys%20%26%20Learning.png",
+"Gear & Travel":"/category-images/Categories/Nursery.png",
+"Baby Gear & Cradle Accessories":"/category-images/Categories/Nursery.png",
+"Mom Care":"/category-images/Categories/Health%20%26%20Safety.png"
 };
 const fallback=(label:string)=>"data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480"><defs><linearGradient id="g"><stop stop-color="#dff3ff"/><stop offset="1" stop-color="#ffe0e9"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><circle cx="320" cy="190" r="100" fill="#ffffffaa"/><text x="320" y="215" text-anchor="middle" font-size="100">🧸</text><text x="320" y="365" text-anchor="middle" font-family="Arial" font-size="25" fill="#30466a">'+label.replace(/[<>&]/g,"")+'</text></svg>');
 const money=(n:number|null|undefined)=>n==null?"Price on request":"₹"+Number(n).toLocaleString("en-IN");
@@ -140,7 +140,7 @@ return <main className="lb">
  </div>
  <div className="lb-hero-dots" aria-hidden="true"><i></i><i></i><i></i></div>
 </section>
-<section className="lb-reference-categories" id="lb-categories">{[{n:"Diapers",img:"/category-images/categories/diapers.webp",v:"Diapers & Wipes"},{n:"Feeding",img:"/category-images/categories/feeding.webp",v:"Feeding Essentials"},{n:"Bath & Skincare",img:"/category-images/categories/bath-skincare.webp",v:"Baby Bath & Skincare"},{n:"Health & Safety",img:"/category-images/categories/health-safety.webp",v:"Health & Safety"},{n:"Toys & Learning",img:"/category-images/categories/toys-learning.webp",v:"Toys & Learning"},{n:"Mom Care",img:"/category-images/categories/mom-care-icon.svg",v:"Mom Care"},{n:"Clothing",img:"/category-images/categories/clothing.webp",v:"Clothing & Accessories"},{n:"Nursery",img:"/category-images/categories/nursery.webp",v:"Gear & Travel"},{n:"All Categories",img:"",v:"All"}].map((c,i)=><button key={c.n} onClick={()=>{if(i===0){window.location.assign("/diapers");return;}setSelected(c.v);setSearch("");document.getElementById("shop")?.scrollIntoView({behavior:"smooth"});}}><span>{c.img?<img src={c.img} alt=""/>:<b className="lb-category-emoji">{["","","","🌡️","","","","🛏️","▦"][i]}</b>}</span><strong>{c.n}</strong></button>)}</section>
+<section className="lb-reference-categories" id="lb-categories">{[{n:"Diapers",img:"/category-images/Categories/diaper.png",v:"Diapers & Wipes"},{n:"Feeding",img:"/category-images/Categories/Feeding.png",v:"Feeding Essentials"},{n:"Bath & Skincare",img:"/category-images/Categories/bath%20and%20skin.png",v:"Baby Bath & Skincare"},{n:"Health & Safety",img:"/category-images/Categories/Health%20%26%20Safety.png",v:"Health & Safety"},{n:"Toys & Learning",img:"/category-images/Categories/Toys%20%26%20Learning.png",v:"Toys & Learning"},{n:"Mom Care",img:"/category-images/Categories/Mom%20Care.png",v:"Mom Care"},{n:"Clothing",img:"/category-images/Categories/Clothing.png",v:"Clothing & Accessories"},{n:"Nursery",img:"/category-images/Categories/Nursery.png",v:"Gear & Travel"},{n:"All Categories",img:"",v:"All"}].map((c,i)=><button key={c.n} onClick={()=>{if(i===0){window.location.assign("/diapers");return;}setSelected(c.v);setSearch("");document.getElementById("shop")?.scrollIntoView({behavior:"smooth"});}}><span>{c.img?<img src={c.img} alt=""/>:<b className="lb-category-emoji">{["","","","🌡️","","","","🛏️","▦"][i]}</b>}</span><strong>{c.n}</strong></button>)}</section>
 <section className="lb-reference-diaper-banner lb-diaper-banner-art">
  <div className="lb-reference-diaper-copy"><h2>Diapers at<br/>Lowest Prices</h2><p>Compare • Save • Shop Smarter</p><a href="/diapers">View Diaper Deals <ArrowRight size={15}/></a></div>
  <div className="lb-diaper-product-art" aria-label="Popular diaper brands">
