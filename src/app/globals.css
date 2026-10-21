@@ -721,17 +721,19 @@ body{background:#fff;color:#17243b}
 .lb-brand-pill{height:67px;min-width:0;border:1px solid #eceef0;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:8px 12px;box-sizing:border-box;background:#fff;overflow:hidden}.lb-brand-pill img{display:block;width:100%;height:100%;max-width:100%;max-height:48px;object-fit:contain;object-position:center}
 .lb-brand-pill.brand-1{color:#ed2029}.lb-brand-pill.brand-2{color:#1853a4}.lb-brand-pill.brand-3{color:#e63259}.lb-brand-pill.brand-4{color:#ed2937}.lb-brand-pill.brand-5{color:#143d82}.lb-brand-pill.brand-6{color:#234e9c}.lb-brand-pill.brand-7{color:#4a358b}.lb-brand-pill.brand-8{color:#159bc1}
 .lb-reference-best{margin-top:22px;margin-bottom:14px}
-.lb-reference-deals-heading{margin-bottom:13px}
-.lb-reference-deals-heading h2{white-space:nowrap}
-.lb-reference-tabs{display:flex;align-items:center;gap:22px;flex:1;justify-content:center}
+.lb-reference-deals-heading{margin-bottom:13px;min-width:0;flex-wrap:wrap}
+.lb-reference-deals-heading h2{white-space:nowrap;flex:0 0 auto}
+.lb-reference-tabs{display:flex;align-items:center;gap:22px;flex:1 1 320px;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.lb-reference-tabs::-webkit-scrollbar{display:none}
+.lb-reference-tabs button{flex:0 0 auto}
 .lb-reference-tabs button{border:0;background:transparent;color:#606572;padding:8px 2px;font-size:12px;white-space:nowrap;cursor:pointer}
 .lb-reference-tabs button.active{color:#e65e69;border-bottom:2px solid #e65e69}
-.lb-reference-product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.lb-reference-product-grid article{min-width:0;border:1px solid #eceef0;border-radius:14px;background:#fff;padding:10px 10px 12px;box-shadow:0 3px 12px #202c3b05}
-.lb-reference-product-image{height:132px;position:relative;background:#fff;display:grid;place-items:center}
-.lb-reference-product-image>a{height:100%;width:100%;display:grid;place-items:center}
-.lb-reference-product-image img{width:100%;height:100%;object-fit:contain;padding:5px}
-.lb-reference-product-image>button{position:absolute;right:3px;top:3px;border:0;background:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;color:#f06b78}
+.lb-reference-product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:stretch}
+.lb-reference-product-grid article{min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column;border:1px solid #eceef0;border-radius:14px;background:#fff;padding:10px 10px 12px;box-shadow:0 3px 12px #202c3b05}
+.lb-reference-product-image{height:180px;min-height:180px;flex:0 0 180px;position:relative;overflow:hidden;background:#fff;display:block}
+.lb-reference-product-image>a{position:absolute;inset:0;display:flex;width:100%;height:100%;align-items:center;justify-content:center;overflow:hidden}
+.lb-reference-product-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;min-width:0;min-height:0;object-fit:contain;object-position:center;padding:8px;box-sizing:border-box}
+.lb-reference-product-image>button{position:absolute;z-index:2;right:3px;top:3px;border:0;background:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;color:#f06b78}
 .lb-reference-product-image>button svg{width:16px}
 .lb-reference-product-info h3{font-size:11px;line-height:1.35;min-height:30px;margin:5px 0 2px;color:#283044}
 .lb-reference-product-info h3 a{color:inherit;text-decoration:none}
