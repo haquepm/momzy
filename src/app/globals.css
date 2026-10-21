@@ -1114,12 +1114,18 @@ body{background:#fff;color:#17243b}
 }
 
 
-/* Explicit image layer ensures the supplied diaper artwork is visible in the banner. */
-.lb-reference-diaper-banner.lb-diaper-banner-art{position:relative;isolation:isolate;background:#edf5ee!important}
-.lb-diaper-banner-background{position:absolute!important;inset:0;width:100%!important;height:100%!important;display:block!important;object-fit:fill!important;object-position:center!important;z-index:0!important;pointer-events:none}
+
+/* Final banner artwork: use the complete wide image as the section background. */
+.lb-reference-diaper-banner.lb-diaper-banner-art{
+ position:relative!important;isolation:isolate;
+ background-color:#edf5ee!important;
+ background-image:url("/category-images/promotions/diaper-deals-banner.webp")!important;
+ background-repeat:no-repeat!important;background-position:center center!important;background-size:100% 100%!important;
+}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-reference-diaper-copy,
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art,
-.lb-reference-diaper-banner.lb-diaper-banner-art>.lb-reference-diaper-points{position:relative;z-index:1}
+.lb-reference-diaper-banner.lb-diaper-banner-art>.lb-reference-diaper-points{position:relative;z-index:2}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art{background:transparent!important}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art .pack{display:none!important}
 .lb-reference-diaper-banner.lb-diaper-banner-art>.lb-diaper-product-art:after{display:none!important}
+@media(max-width:700px){.lb-reference-diaper-banner.lb-diaper-banner-art{background-size:cover!important;background-position:center!important}}
