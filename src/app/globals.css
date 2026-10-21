@@ -670,7 +670,21 @@ body{background:#fff;color:#17243b}
 .lb{background:#fff!important;color:#202b3d!important;font-family:'Nunito Sans',Arial,sans-serif}
 .lb-reference-head{width:100%;height:auto;min-height:96px;margin:0 auto 0;padding:8px max(4.2%,calc((100% - 1400px)/2));border:0;border-radius:0;box-shadow:0 1px 8px #182b3a0b;display:flex;flex-direction:column;gap:7px;background:#fff;position:relative;z-index:4}
 .lb-header-top{width:100%;display:grid;grid-template-columns:220px minmax(250px,1fr) auto;align-items:center;gap:30px;min-height:42px}
-.lb-reference-head .lb-brand-logo{justify-self:start}
+.lb-reference-head .lb-brand-logo{justify-self:start;width:210px!important;min-width:0!important;max-width:210px!important;height:54px!important;flex:0 0 210px!important;overflow:hidden;display:flex;align-items:center}
+.lb-reference-head .lb-brand-logo-full{display:block!important;width:210px!important;min-width:210px!important;max-width:210px!important;height:54px!important;max-height:54px!important;flex:0 0 210px!important;object-fit:contain!important;object-position:left center!important}
+.lb-reference-head .lb-header-top{grid-template-columns:220px minmax(250px,1fr) auto;min-height:54px}
+.lb-reference-head{min-height:104px}
+@media(max-width:850px){
+ .lb-reference-head .lb-brand-logo{width:180px!important;max-width:180px!important;flex-basis:180px!important;height:46px!important}
+ .lb-reference-head .lb-brand-logo-full{width:180px!important;min-width:180px!important;max-width:180px!important;height:46px!important;max-height:46px!important;flex-basis:180px!important}
+ .lb-reference-head .lb-header-top{grid-template-columns:180px minmax(160px,1fr) auto;gap:12px}
+}
+@media(max-width:560px){
+ .lb-reference-head .lb-header-top{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+ .lb-reference-head .lb-brand-logo{width:150px!important;max-width:150px!important;flex-basis:150px!important;height:40px!important}
+ .lb-reference-head .lb-brand-logo-full{width:150px!important;min-width:150px!important;max-width:150px!important;height:40px!important;max-height:40px!important;flex-basis:150px!important}
+ .lb-reference-head .lb-search{grid-column:1/-1;order:0;width:100%}
+}
 .lb-reference-head .lb-search{width:min(100%,520px);max-width:none;height:40px;margin:0 auto;border:1px solid #f0ece9;background:#f8f6f4;border-radius:24px;padding:0 14px;display:flex;align-items:center;gap:10px}
 .lb-reference-head .lb-search input{font-size:12px}
 .lb-reference-head .lb-actions{display:flex;align-items:center;gap:20px}
